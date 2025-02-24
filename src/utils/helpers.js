@@ -33,3 +33,13 @@ export const on = (element, event, handler, options = {}) => {
 export const off = (element, event, handler) => {
   element.removeEventListener(event, handler);
 };
+
+// Return active modal
+export const getActiveModal = () => $('.js-modal.active', document)[0];
+
+// Return active video player
+export const getActivePlayer = () => {
+  const modal = getActiveModal();
+  if (!modal) return null;
+  return $('.js-video-player', modal)[0];
+};

@@ -1,0 +1,65 @@
+.modal {
+  transition: opacity 0.3s ease;
+}
+.modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-title {
+  font-size: 24px;
+  font-weight: 400;
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  z-index: 3;
+}
+.modal-content {
+  align-items: center;
+  bottom: auto;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 70px);
+  justify-content: center;
+  position: absolute;
+  top: auto;
+  z-index: 2;
+}
+.modal-content::before, 
+.modal-content::after {
+  content: none;
+}
+.modal-title {
+  top: 22px;
+}
+.modal-close {
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  transition: opacity 0.2s ease;
+  z-index: 9;
+}
+.no-touch .modal-close:hover {
+  opacity: 0.5;
+}
+@media (min-width: 480px) {
+  .modal-title {
+    left: 40px;
+  }
+  .modal-close {
+    right: 40px;
+  }
+}
+@media (min-width: 992px) {
+  .modal-title {
+    font-size: 26px;
+    top: 30px;
+  }
+  .modal-close {
+    top: 35px;
+  }
+}
+@supports (-webkit-touch-callout: none) {
+  .modal-content {
+    height: calc(100dvh - 70px);
+  }
+}

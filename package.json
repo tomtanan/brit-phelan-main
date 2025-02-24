@@ -20,6 +20,8 @@
     "vite": "^5.4.9"
   },
   "dependencies": {
+    "@vimeo/player": "^2.25.1",
+    "mitt": "^3.0.1",
     "select-dom": "^9.0.0",
     "swiper": "^11.2.4"
   }

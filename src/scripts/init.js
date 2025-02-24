@@ -1,7 +1,11 @@
+import modal from '../modules/modal.js';
 import projects from '../modules/projects.js';
-// Mapping of data-module values to imported modules
+import videoPlayer from '../modules/video-player.js';
+
 export const modulesMap = {
-  'projects': projects
+  'modal': modal,
+  'projects': projects,
+  'video-player': videoPlayer
 };
 
 // Automatically initialize sections based on the data-module attribute
@@ -11,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const module = modulesMap[moduleName];
 
     if (module && typeof module === 'function') {
-      module(element); // Initialize the module, passing in the element if necessary
+      module(element);
     } else {
       console.error(`No module found for: ${moduleName}`);
     }
