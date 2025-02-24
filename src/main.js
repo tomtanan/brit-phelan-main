@@ -1,9 +1,8 @@
-import { createButton } from 'components/button.js';
-import { greet } from 'utils/helpers.js';
+import 'scripts/init';
 import 'styles/main.css';
+import { $ } from 'select-dom';
+import { isTouchDevice, removeClass } from 'utils/helpers';
 
-const button = createButton('Click Me!', () => {
-  document.getElementById('message').textContent = greet();
-});
 
-document.getElementById('app').appendChild(button);
+
+if (isTouchDevice()) removeClass($('body'), 'no-touch');

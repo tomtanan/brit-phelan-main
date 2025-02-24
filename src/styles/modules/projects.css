@@ -1,0 +1,51 @@
+.project-thumbs .swiper-slide {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+.project-thumbs .swiper-slide-active {
+  opacity: 1;
+}
+.project-thumbs .swiper-slide-prev {
+  opacity: 0;
+}
+.project-thumbs .swiper-slide-active::before, 
+.project-thumbs .swiper-slide-active::after {
+  background: var(--white);
+  bottom: 0;
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transition: opacity 0.2s ease;
+  width: 100%;
+}
+.project-thumbs .swiper-slide-active::before {
+  opacity: 0.3;
+  z-index: 1;
+}
+.project-thumbs .swiper-slide-active::after {
+  animation: progress 10s linear;
+  z-index: 2;
+}
+.project-thumbs-nav {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 250px !important;
+}
+.project-thumbs-nav .swiper-pagination-bullet {
+  background-color: var(--white);
+  height: 4px;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, width 0.2s ease, height 0.2s ease;
+  width: 4px;
+}
+.project-thumbs-nav .swiper-pagination-bullet-active {
+  height: 10px;
+  opacity: 1;
+  width: 10px;
+}
+.no-touch .project-thumbs .swiper-slide:hover{
+  opacity: 1;
+}

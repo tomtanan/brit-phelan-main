@@ -1,0 +1,6 @@
+.no-touch .button {
+  transition: opacity 0.2s ease;
+}
+.no-touch .button:hover {
+  opacity: 0.5;
+}

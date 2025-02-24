@@ -1,1 +1,6 @@
 @import 'variables/global';
+@import 'libs/animations';
+@import 'libs/global';
+@import 'libs/buttons';
+@import 'styles/modules/nav';
+@import 'styles/modules/projects';
