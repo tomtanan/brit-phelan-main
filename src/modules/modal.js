@@ -14,9 +14,10 @@ const modal = (el) => {
   const closeBtn = $('.js-modal-close', modal);
 
   const showModal = () => {
-    emitter.emit('openModal');
     addClass(document.body, 'scroll-lock');
     addClass(modal, 'active');
+    emitter.emit('openModal');
+    emitter.emit('pauseSwipers');
   };
 
   // Close the modal with animation
@@ -24,8 +25,8 @@ const modal = (el) => {
     removeClass(document.body, 'scroll-lock');
     removeClass(modal, 'active');
     emitter.emit('closeModal');
-    emitter.emit('resetPlayers');
-    emitter.emit('resetGallery');
+    emitter.emit('resetPlayer');
+    emitter.emit('resumeSwipers');
   };
 
   // Event listeners

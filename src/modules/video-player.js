@@ -49,7 +49,6 @@ const videoPlayer = (el) => {
 
   const iframe = $('.js-iframe', el);
   const player = new Player(iframe);
-
   const playBtn = $('.js-play', el);
   const fullscreenBtn = $('.js-fullscreen', el);
   const overlay = $('.js-overlay', el);
@@ -62,10 +61,12 @@ const videoPlayer = (el) => {
   player.setVolume(0.5);
 
   const togglePlay = () => {
-    player.getPaused().then((paused) => {
-      paused ? player.play() : player.pause();
-      toggleButtonClass(playBtn, paused);
-    });
+    if (getActivePlayer() === el) {
+      player.getPaused().then((paused) => {
+        paused ? player.play() : player.pause();
+        toggleButtonClass(playBtn, paused);
+      });
+    }
   };
 
   const resetPlayer = () => {
@@ -186,7 +187,8 @@ const videoPlayer = (el) => {
     removeClass(playBtn, 'active');
   });
 
-  emitter.on('resetPlayers', resetPlayer);
+  emitter.on('resetPlayer', resetPlayer);
+  emitter.on('openModal', togglePlay);
 };
 
 export default videoPlayer;
