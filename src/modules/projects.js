@@ -61,9 +61,13 @@ const projects = (el) => {
       disableOnInteraction: false
     },
     loop: true,
-    keyboard: { enabled: true },
+    keyboard: { 
+      enabled: true 
+    },
     slideToClickedSlide: true,
-    thumbs: { swiper: projectSwiper },
+    thumbs: { 
+      swiper: projectSwiper 
+    },
     pagination: {
       el: '.js-project-thumbs-nav',
       clickable: true,
@@ -73,8 +77,6 @@ const projects = (el) => {
   emitter.on('pauseSwipers', () => {
     thumbSwiper.autoplay.stop();
     thumbSlides.forEach(slide => removeClass(slide, ACTIVE_CLASS));
-
-    console.log(thumbSlides);
 
     const activeVideo = getActiveVideo();
     if (activeVideo) {

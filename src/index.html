@@ -12,7 +12,7 @@
   <title>Brit Phelan</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
-  <link href="https://cdn.prod.website-files.com/6798c785687c3eaa0e8252bb/css/brit-phelan-main.webflow.4f5c2b530.css"
+  <link href="https://cdn.prod.website-files.com/6798c785687c3eaa0e8252bb/css/brit-phelan-main.webflow.d47cb2fa2.css"
     rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -24,6 +24,467 @@
     type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
   <link href="https://cdn.prod.website-files.com/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="https://cdn.prod.website-files.com/img/webclip.png" rel="apple-touch-icon">
+  <style>
+    :root {
+      --black: #0c0c0c;
+      --white: #fff
+    }
+
+    @keyframes progress {
+      0% {
+        width: 0
+      }
+
+      to {
+        width: 100%
+      }
+    }
+
+    .w-webflow-badge {
+      display: none !important
+    }
+
+    body {
+      line-height: 1
+    }
+
+    .no-touch .button {
+      transition: opacity .2s ease
+    }
+
+    .no-touch .button:hover {
+      opacity: .5
+    }
+
+    .navbar:not(.mobile-menu--open).black .nav-link {
+      color: var(--black)
+    }
+
+    .navbar:not(.mobile-menu--open).black .logo-letter {
+      fill: var(--black)
+    }
+
+    .navbar:not(.mobile-menu--open).black .nav-line {
+      background-color: var(--black)
+    }
+
+    .nav-link {
+      transition: opacity .2s ease
+    }
+
+    .nav-line {
+      transition: background-color .3s ease, opacity .2s ease, top .2s ease, transform .2s ease
+    }
+
+    .no-touch .nav-link:hover {
+      opacity: 1
+    }
+
+    .no-touch .nav-link-contact:hover {
+      opacity: .2
+    }
+
+    .w-nav-overlay {
+      width: 100vw !important
+    }
+
+    .w-nav-overlay .w-nav-menu {
+      align-content: center;
+      display: flex !important;
+      flex-wrap: wrap;
+      justify-content: center
+    }
+
+    .w-nav-overlay .nav-link {
+      flex: 0 0 auto;
+      height: auto;
+      padding: 10px 20px
+    }
+
+    .w-nav-overlay .nav-link-contact {
+      bottom: 20px;
+      left: 0;
+      margin: 0 auto;
+      position: absolute;
+      right: 0 !important
+    }
+
+    .w-nav-button.w--open {
+      background: none !important
+    }
+
+    .w-nav-button.w--open .nav-line.line-2 {
+      transform: rotate(45deg)
+    }
+
+    .w-nav-button.w--open .nav-line.line-1,
+    .w-nav-button.w--open .nav-line.line-3 {
+      top: calc(50% - .5px);
+      transform: rotate(-45deg)
+    }
+
+    .w-nav-button.w--open .nav-line.line-1 {
+      opacity: 0
+    }
+
+    .logo svg {
+      display: block;
+      height: 100%;
+      -o-object-fit: contain;
+      object-fit: contain;
+      width: 100%
+    }
+
+    .no-touch .logo {
+      transition: opacity .2s ease
+    }
+
+    .no-touch .logo:hover {
+      opacity: .2
+    }
+
+    .project-thumbs .swiper-slide {
+      cursor: pointer;
+      opacity: .5;
+      transition: opacity .2s ease
+    }
+
+    .project-thumbs .swiper-slide-playing {
+      opacity: 1
+    }
+
+    .project-thumbs .swiper-slide-playing:before,
+    .project-thumbs .swiper-slide-playing:after {
+      background: var(--white);
+      bottom: 0;
+      content: "";
+      height: 2px;
+      left: 0;
+      position: absolute;
+      transition: opacity .2s ease;
+      width: 100%
+    }
+
+    .project-thumbs .swiper-slide-playing:before {
+      opacity: .3;
+      z-index: 1
+    }
+
+    .project-thumbs .swiper-slide-playing:after {
+      animation: progress 11s linear;
+      z-index: 2
+    }
+
+    .project-thumbs .swiper-slide-prev {
+      opacity: 0
+    }
+
+    .project-thumbs-nav {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      width: 250px !important
+    }
+
+    .project-thumbs-nav .swiper-pagination-bullet {
+      background-color: var(--white);
+      height: 4px;
+      opacity: .5;
+      transition: opacity .2s ease, width .2s ease, height .2s ease;
+      width: 4px
+    }
+
+    .project-thumbs-nav .swiper-pagination-bullet-active {
+      height: 10px;
+      opacity: 1;
+      width: 10px
+    }
+
+    .no-touch .project-thumbs .swiper-slide:hover {
+      opacity: 1
+    }
+
+    .modal {
+      transition: opacity .3s ease
+    }
+
+    .modal.active {
+      opacity: 1;
+      pointer-events: auto
+    }
+
+    .modal-title {
+      font-size: 24px;
+      font-weight: 400;
+      position: absolute;
+      left: 20px;
+      top: 40px;
+      z-index: 3
+    }
+
+    .modal-content {
+      align-items: center;
+      bottom: auto;
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 70px);
+      justify-content: center;
+      position: absolute;
+      top: auto;
+      z-index: 2
+    }
+
+    .modal-content:before,
+    .modal-content:after {
+      content: none
+    }
+
+    .modal-title {
+      top: 22px
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 20px;
+      top: 30px;
+      transition: opacity .2s ease;
+      z-index: 9
+    }
+
+    .no-touch .modal-close:hover {
+      opacity: .5
+    }
+
+    @media (min-width: 480px) {
+      .modal-title {
+        left: 40px
+      }
+
+      .modal-close {
+        right: 40px
+      }
+    }
+
+    @media (min-width: 992px) {
+      .modal-title {
+        font-size: 26px;
+        top: 30px
+      }
+
+      .modal-close {
+        top: 35px
+      }
+    }
+
+    @supports (-webkit-touch-callout: none) {
+      .modal-content {
+        height: calc(100dvh - 70px)
+      }
+    }
+
+    .video-player {
+      width: 100%
+    }
+
+    .video-screen {
+      aspect-ratio: 16 / 9;
+      position: relative;
+      width: 100%
+    }
+
+    .video-iframe {
+      aspect-ratio: 16 / 9;
+      height: 100%;
+      width: 100%;
+      z-index: 1
+    }
+
+    .video-overlay {
+      cursor: pointer;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      z-index: 2
+    }
+
+    .video-controls {
+      align-items: center;
+      bottom: 0;
+      display: flex;
+      height: 60px;
+      justify-content: space-between;
+      position: absolute;
+      width: 100%
+    }
+
+    .video-controls .play-btn,
+    .video-controls .sound-btn,
+    .video-controls .fullscreen-btn {
+      height: 60px;
+      width: 50px
+    }
+
+    .video-controls .play-btn,
+    .video-controls .sound-btn,
+    .video-controls .fullscreen-btn {
+      align-items: center;
+      background: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      text-align: left;
+      transition: opacity .2s ease
+    }
+
+    .video-controls .play-btn:hover,
+    .video-controls .sound-btn:hover,
+    .video-controls .fullscreen-btn:hover {
+      opacity: .5
+    }
+
+    .video-controls .play-btn .ico-play {
+      display: block
+    }
+
+    .video-controls .play-btn .ico-pause,
+    .video-controls .play-btn.active .ico-play {
+      display: none
+    }
+
+    .video-controls .play-btn.active .ico-pause {
+      display: block
+    }
+
+    .sound-btn.set-0 .ico-sound-50,
+    .sound-btn.set-0 .ico-sound-100,
+    .sound-btn.set-50 .ico-sound-100 {
+      display: none
+    }
+
+    .video-controls .timeline {
+      cursor: pointer;
+      flex-grow: 1;
+      height: 15px;
+      margin: 0 10px;
+      padding: 0;
+      position: relative
+    }
+
+    .video-controls .timeline:before {
+      background: #ffffff4d;
+      bottom: 0;
+      content: "";
+      height: 1px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      width: 100%
+    }
+
+    .video-controls .timeline-progress {
+      background: var(--white);
+      bottom: 0;
+      height: 1px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      transition: width .5s ease;
+      width: 0
+    }
+
+    .video-controls .fullscreen-btn .ico-resize,
+    .video-controls .fullscreen-btn.active .ico-fullscreen {
+      display: none
+    }
+
+    .video-controls .fullscreen-btn.active .ico-resize {
+      display: block
+    }
+
+    .video-player.is-fullscreen .video-screen {
+      max-height: none;
+      height: 100vh;
+      position: relative;
+      width: 100vw;
+      z-index: 1
+    }
+
+    .video-player.is-fullscreen .video-controls {
+      bottom: 0;
+      padding: 0 10px;
+      position: absolute;
+      z-index: 9
+    }
+
+    .sound-settings {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 10px;
+      justify-content: center;
+      overflow: hidden;
+      transition: width .2s ease;
+      width: 0
+    }
+
+    .sound-settings.active {
+      width: 60px
+    }
+
+    .volume-slider {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      height: 1px;
+      background: #ffffff80;
+      outline: none;
+      padding: 0;
+      width: 100%
+    }
+
+    .volume-slider::-webkit-slider-runnable-track,
+    .volume-slider::-moz-range-track,
+    .volume-slider::-ms-track {
+      background: #ffffff80;
+      height: 1px
+    }
+
+    .volume-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: var(--white);
+      cursor: pointer;
+      width: 1px;
+      height: 9px
+    }
+
+    .volume-slider::-moz-range-thumb {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: var(--white);
+      cursor: pointer;
+      width: 1px;
+      height: 9px
+    }
+
+    .volume-slider::-ms-thumb {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: var(--white);
+      cursor: pointer;
+      width: 1px;
+      height: 9px
+    }
+  </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <style type="text/css">
     @font-face {
@@ -76,182 +537,11 @@
   <div data-module="projects" class="projects">
     <div
       class="projects-swiper swiper js-projects-swiper w-dyn-list swiper-fade swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden swiper-thumbs">
-      <div role="list" class="projects-swiper-wrapper swiper-wrapper w-dyn-items" id="swiper-wrapper-57e33481010f8ae75a"
-        aria-live="polite">
-        <div role="group"
-          class="projects-swiper-slide swiper-slide w-dyn-item swiper-slide-visible swiper-slide-fully-visible swiper-slide-active swiper-slide-thumb-active"
-          style="width: 1440px; opacity: 1; transform: translate3d(0px, 0px, 0px);" aria-label="1 / 4"
-          data-swiper-slide-index="0">
-          <div class="project-content">
-            <h2 class="h2 project-title">Something Happened</h2>
-            <p class="p1 project-text">In the aftermath of a sexual assault case gone wrong, a young woman and her
-              friends form a vigilante squad called The Brooklyn Banshees and plot a path of brutal revenge.</p>
-            <div class="project-buttons"><a data-modal="something-happened" data-module="modal" href="#"
-                class="button button-secondary w-inline-block">
-                <div class="icon-play">
-                  <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
-                      <path fill="#fff" d="m25.057 17.58-11.932 6.888V10.691l11.932 6.888Z"></path>
-                    </svg>
-
-                    <style>
-                      .w-embed::before,
-                      .w-embed::after {
-                        content: none;
-                      }
-                    </style>
-                  </div>
-                </div>
-                <div class="button-text">Watch Trailer</div>
-              </a><a href="/projects/something-happened" class="button button-primary w-inline-block">
-                <div class="icon-information">
-                  <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 12 12">
-                      <g clip-path="url(#a)">
-                        <path fill="#fff"
-                          d="M6 1c2.757 0 5 2.243 5 5s-2.243 5-5 5-5-2.243-5-5 2.243-5 5-5Zm0-1a6 6 0 1 0 0 12A6 6 0 0 0 6 0Zm0 2.875a.626.626 0 1 1 0 1.251.626.626 0 0 1 0-1.251ZM7 9H5v-.5c.242-.09.5-.1.5-.367V5.899c0-.267-.258-.309-.5-.399V5h1.5v3.133c0 .268.258.279.5.368V9Z">
-                        </path>
-                      </g>
-                      <defs>
-                        <clipPath id="a">
-                          <path fill="#fff" d="M0 0h12v12H0z"></path>
-                        </clipPath>
-                      </defs>
-                    </svg>
-                    <style>
-                      .w-embed::before,
-                      .w-embed::after {
-                        content: none;
-                      }
-                    </style>
-                  </div>
-                </div>
-                <div class="button-text">More Info</div>
-              </a></div>
-          </div>
-          <div class="gradient"></div>
-          <div class="project-background-video w-embed"><video
-              class="project-background-video js-project-background-video" playsinline="" loop="" muted=""
-              preload="auto">
-              <source
-                src="https://player.vimeo.com/progressive_redirect/playback/1018146127/rendition/1080p/file.mp4?loc=external&amp;log_user=0&amp;signature=bd44867d3a54c50c4bc40fdb6a88ac32f973ac0da2d3ccb6ed4fd1cdcbc3be46"
-                type="video/mp4">
-            </video></div>
-        </div>
-        <div role="group" class="projects-swiper-slide swiper-slide w-dyn-item swiper-slide-next"
-          style="width: 1440px; opacity: 0; transform: translate3d(-1440px, 0px, 0px);" aria-label="2 / 4"
-          data-swiper-slide-index="1">
-          <div class="project-content">
-            <h2 class="h2 project-title">Looking For Love</h2>
-            <p class="p1 project-text">A queer dating advice Influencer with millions of views explores the
-              contradiction of her own cluelessness in love and the challenges of internet fame.</p>
-            <div class="project-buttons"><a data-modal="looking-for-love" data-module="modal" href="#"
-                class="button button-secondary w-inline-block">
-                <div class="icon-play">
-                  <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
-                      <path fill="#fff" d="m25.057 17.58-11.932 6.888V10.691l11.932 6.888Z"></path>
-                    </svg>
-
-                    <style>
-                      .w-embed::before,
-                      .w-embed::after {
-                        content: none;
-                      }
-                    </style>
-                  </div>
-                </div>
-                <div class="button-text">Watch Trailer</div>
-              </a><a href="/projects/looking-for-love" class="button button-primary w-inline-block">
-                <div class="icon-information">
-                  <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 12 12">
-                      <g clip-path="url(#a)">
-                        <path fill="#fff"
-                          d="M6 1c2.757 0 5 2.243 5 5s-2.243 5-5 5-5-2.243-5-5 2.243-5 5-5Zm0-1a6 6 0 1 0 0 12A6 6 0 0 0 6 0Zm0 2.875a.626.626 0 1 1 0 1.251.626.626 0 0 1 0-1.251ZM7 9H5v-.5c.242-.09.5-.1.5-.367V5.899c0-.267-.258-.309-.5-.399V5h1.5v3.133c0 .268.258.279.5.368V9Z">
-                        </path>
-                      </g>
-                      <defs>
-                        <clipPath id="a">
-                          <path fill="#fff" d="M0 0h12v12H0z"></path>
-                        </clipPath>
-                      </defs>
-                    </svg>
-                    <style>
-                      .w-embed::before,
-                      .w-embed::after {
-                        content: none;
-                      }
-                    </style>
-                  </div>
-                </div>
-                <div class="button-text">More Info</div>
-              </a></div>
-          </div>
-          <div class="gradient"></div>
-          <div class="project-background-video w-embed"><video
-              class="project-background-video js-project-background-video" playsinline="" loop="" muted=""
-              preload="auto">
-              <source
-                src="https://player.vimeo.com/progressive_redirect/playback/526036644/rendition/1080p/file.mp4?loc=external&amp;log_user=0&amp;signature=969183e09deaa2f5f3c9da18fe9e55f1b5921f7966e770a7c7fe1e88b1b214ba&amp;user_id=18829759"
-                type="video/mp4">
-            </video></div>
-        </div>
-        <div role="group" class="projects-swiper-slide swiper-slide w-dyn-item"
-          style="width: 1440px; opacity: 0; transform: translate3d(-2880px, 0px, 0px);" aria-label="3 / 4"
-          data-swiper-slide-index="2">
-          <div class="project-content">
-            <h2 class="h2 project-title">Finding Dad</h2>
-            <p class="p1 project-text">A filmmaker hires an actor to portray herself and go to Augsburg, Germany in an
-              attempt to reconnect with her estranged and reluctant father.</p>
-            <div class="project-buttons"><a data-modal="finding-dad" data-module="modal" href="#"
-                class="button button-secondary w-inline-block">
-                <div class="icon-play">
-                  <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
-                      <path fill="#fff" d="m25.057 17.58-11.932 6.888V10.691l11.932 6.888Z"></path>
-                    </svg>
-
-                    <style>
-                      .w-embed::before,
-                      .w-embed::after {
-                        content: none;
-                      }
-                    </style>
-                  </div>
-                </div>
-                <div class="button-text">Watch Trailer</div>
-              </a><a href="/projects/finding-dad" class="button button-primary w-inline-block">
-                <div class="icon-information">
-                  <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 12 12">
-                      <g clip-path="url(#a)">
-                        <path fill="#fff"
-                          d="M6 1c2.757 0 5 2.243 5 5s-2.243 5-5 5-5-2.243-5-5 2.243-5 5-5Zm0-1a6 6 0 1 0 0 12A6 6 0 0 0 6 0Zm0 2.875a.626.626 0 1 1 0 1.251.626.626 0 0 1 0-1.251ZM7 9H5v-.5c.242-.09.5-.1.5-.367V5.899c0-.267-.258-.309-.5-.399V5h1.5v3.133c0 .268.258.279.5.368V9Z">
-                        </path>
-                      </g>
-                      <defs>
-                        <clipPath id="a">
-                          <path fill="#fff" d="M0 0h12v12H0z"></path>
-                        </clipPath>
-                      </defs>
-                    </svg>
-                    <style>
-                      .w-embed::before,
-                      .w-embed::after {
-                        content: none;
-                      }
-                    </style>
-                  </div>
-                </div>
-                <div class="button-text">More Info</div>
-              </a></div>
-          </div>
-          <div class="gradient"></div>
-          <div class="project-background-video w-embed"><video
-              class="project-background-video js-project-background-video" playsinline="" loop="" muted=""
-              preload="auto">
-              <source
-                src="https://player.vimeo.com/progressive_redirect/playback/1035687627/rendition/1080p/file.mp4?loc=external&amp;log_user=0&amp;signature=601846e0ad9cdad131993bc4972194bc78e81a062cdbae636ba4579ff3c5aaf9&amp;user_id=18829759"
-                type="video/mp4">
-            </video></div>
-        </div>
-        <div role="group" class="projects-swiper-slide swiper-slide w-dyn-item" aria-label="4 / 4"
-          style="width: 1440px; opacity: 0; transform: translate3d(-4320px, 0px, 0px);" data-swiper-slide-index="3">
+      <div role="list" class="projects-swiper-wrapper swiper-wrapper w-dyn-items" id="swiper-wrapper-e10a7e09ce7ee10d7d"
+        aria-live="polite" style="transition-duration: 0ms; transition-delay: 0ms;">
+        <div role="group" class="projects-swiper-slide swiper-slide w-dyn-item swiper-slide-prev"
+          style="width: 2304px; opacity: 0; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"
+          aria-label="1 / 4" data-swiper-slide-index="0">
           <div class="project-content">
             <h2 class="h2 project-title">Starlight</h2>
             <p class="p1 project-text">A group of queer girls band together to save the alternative coffee shop where
@@ -306,26 +596,200 @@
                 type="video/mp4">
             </video></div>
         </div>
+        <div role="group"
+          class="projects-swiper-slide swiper-slide w-dyn-item swiper-slide-thumb-active swiper-slide-visible swiper-slide-fully-visible swiper-slide-active"
+          style="width: 2304px; opacity: 1; transform: translate3d(-2304px, 0px, 0px); transition-duration: 0ms;"
+          aria-label="2 / 4" data-swiper-slide-index="1">
+          <div class="project-content">
+            <h2 class="h2 project-title">Finding Dad</h2>
+            <p class="p1 project-text">A filmmaker hires an actor to portray herself and go to Augsburg, Germany in an
+              attempt to reconnect with her estranged and reluctant father.</p>
+            <div class="project-buttons"><a data-modal="finding-dad" data-module="modal" href="#"
+                class="button button-secondary w-inline-block">
+                <div class="icon-play">
+                  <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
+                      <path fill="#fff" d="m25.057 17.58-11.932 6.888V10.691l11.932 6.888Z"></path>
+                    </svg>
+
+                    <style>
+                      .w-embed::before,
+                      .w-embed::after {
+                        content: none;
+                      }
+                    </style>
+                  </div>
+                </div>
+                <div class="button-text">Watch Trailer</div>
+              </a><a href="/projects/finding-dad" class="button button-primary w-inline-block">
+                <div class="icon-information">
+                  <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 12 12">
+                      <g clip-path="url(#a)">
+                        <path fill="#fff"
+                          d="M6 1c2.757 0 5 2.243 5 5s-2.243 5-5 5-5-2.243-5-5 2.243-5 5-5Zm0-1a6 6 0 1 0 0 12A6 6 0 0 0 6 0Zm0 2.875a.626.626 0 1 1 0 1.251.626.626 0 0 1 0-1.251ZM7 9H5v-.5c.242-.09.5-.1.5-.367V5.899c0-.267-.258-.309-.5-.399V5h1.5v3.133c0 .268.258.279.5.368V9Z">
+                        </path>
+                      </g>
+                      <defs>
+                        <clipPath id="a">
+                          <path fill="#fff" d="M0 0h12v12H0z"></path>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <style>
+                      .w-embed::before,
+                      .w-embed::after {
+                        content: none;
+                      }
+                    </style>
+                  </div>
+                </div>
+                <div class="button-text">More Info</div>
+              </a></div>
+          </div>
+          <div class="gradient"></div>
+          <div class="project-background-video w-embed"><video
+              class="project-background-video js-project-background-video" playsinline="" loop="" muted=""
+              preload="auto">
+              <source
+                src="https://player.vimeo.com/progressive_redirect/playback/1035687627/rendition/1080p/file.mp4?loc=external&amp;log_user=0&amp;signature=601846e0ad9cdad131993bc4972194bc78e81a062cdbae636ba4579ff3c5aaf9&amp;user_id=18829759"
+                type="video/mp4">
+            </video></div>
+        </div>
+        <div role="group" class="projects-swiper-slide swiper-slide w-dyn-item swiper-slide-next"
+          style="width: 2304px; opacity: 0; transform: translate3d(-4608px, 0px, 0px); transition-duration: 0ms;"
+          aria-label="3 / 4" data-swiper-slide-index="2">
+          <div class="project-content">
+            <h2 class="h2 project-title">Looking For Love</h2>
+            <p class="p1 project-text">A queer dating advice Influencer with millions of views explores the
+              contradiction of her own cluelessness in love and the challenges of internet fame.</p>
+            <div class="project-buttons"><a data-modal="looking-for-love" data-module="modal" href="#"
+                class="button button-secondary w-inline-block">
+                <div class="icon-play">
+                  <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
+                      <path fill="#fff" d="m25.057 17.58-11.932 6.888V10.691l11.932 6.888Z"></path>
+                    </svg>
+
+                    <style>
+                      .w-embed::before,
+                      .w-embed::after {
+                        content: none;
+                      }
+                    </style>
+                  </div>
+                </div>
+                <div class="button-text">Watch Trailer</div>
+              </a><a href="/projects/looking-for-love" class="button button-primary w-inline-block">
+                <div class="icon-information">
+                  <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 12 12">
+                      <g clip-path="url(#a)">
+                        <path fill="#fff"
+                          d="M6 1c2.757 0 5 2.243 5 5s-2.243 5-5 5-5-2.243-5-5 2.243-5 5-5Zm0-1a6 6 0 1 0 0 12A6 6 0 0 0 6 0Zm0 2.875a.626.626 0 1 1 0 1.251.626.626 0 0 1 0-1.251ZM7 9H5v-.5c.242-.09.5-.1.5-.367V5.899c0-.267-.258-.309-.5-.399V5h1.5v3.133c0 .268.258.279.5.368V9Z">
+                        </path>
+                      </g>
+                      <defs>
+                        <clipPath id="a">
+                          <path fill="#fff" d="M0 0h12v12H0z"></path>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <style>
+                      .w-embed::before,
+                      .w-embed::after {
+                        content: none;
+                      }
+                    </style>
+                  </div>
+                </div>
+                <div class="button-text">More Info</div>
+              </a></div>
+          </div>
+          <div class="gradient"></div>
+          <div class="project-background-video w-embed"><video
+              class="project-background-video js-project-background-video" playsinline="" loop="" muted=""
+              preload="auto">
+              <source
+                src="https://player.vimeo.com/progressive_redirect/playback/526036644/rendition/1080p/file.mp4?loc=external&amp;log_user=0&amp;signature=969183e09deaa2f5f3c9da18fe9e55f1b5921f7966e770a7c7fe1e88b1b214ba&amp;user_id=18829759"
+                type="video/mp4">
+            </video></div>
+        </div>
+        <div role="group" class="projects-swiper-slide swiper-slide w-dyn-item" aria-label="4 / 4"
+          style="width: 2304px; opacity: 0; transform: translate3d(-6912px, 0px, 0px); transition-duration: 0ms;"
+          data-swiper-slide-index="3">
+          <div class="project-content">
+            <h2 class="h2 project-title">Something Happened</h2>
+            <p class="p1 project-text">In the aftermath of a sexual assault case gone wrong, a young woman and her
+              friends form a vigilante squad called The Brooklyn Banshees and plot a path of brutal revenge.</p>
+            <div class="project-buttons"><a data-modal="something-happened" data-module="modal" href="#"
+                class="button button-secondary w-inline-block">
+                <div class="icon-play">
+                  <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
+                      <path fill="#fff" d="m25.057 17.58-11.932 6.888V10.691l11.932 6.888Z"></path>
+                    </svg>
+
+                    <style>
+                      .w-embed::before,
+                      .w-embed::after {
+                        content: none;
+                      }
+                    </style>
+                  </div>
+                </div>
+                <div class="button-text">Watch Trailer</div>
+              </a><a href="/projects/something-happened" class="button button-primary w-inline-block">
+                <div class="icon-information">
+                  <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 12 12">
+                      <g clip-path="url(#a)">
+                        <path fill="#fff"
+                          d="M6 1c2.757 0 5 2.243 5 5s-2.243 5-5 5-5-2.243-5-5 2.243-5 5-5Zm0-1a6 6 0 1 0 0 12A6 6 0 0 0 6 0Zm0 2.875a.626.626 0 1 1 0 1.251.626.626 0 0 1 0-1.251ZM7 9H5v-.5c.242-.09.5-.1.5-.367V5.899c0-.267-.258-.309-.5-.399V5h1.5v3.133c0 .268.258.279.5.368V9Z">
+                        </path>
+                      </g>
+                      <defs>
+                        <clipPath id="a">
+                          <path fill="#fff" d="M0 0h12v12H0z"></path>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <style>
+                      .w-embed::before,
+                      .w-embed::after {
+                        content: none;
+                      }
+                    </style>
+                  </div>
+                </div>
+                <div class="button-text">More Info</div>
+              </a></div>
+          </div>
+          <div class="gradient"></div>
+          <div class="project-background-video w-embed"><video
+              class="project-background-video js-project-background-video" playsinline="" loop="" muted=""
+              preload="auto">
+              <source
+                src="https://player.vimeo.com/progressive_redirect/playback/1018146127/rendition/1080p/file.mp4?loc=external&amp;log_user=0&amp;signature=bd44867d3a54c50c4bc40fdb6a88ac32f973ac0da2d3ccb6ed4fd1cdcbc3be46"
+                type="video/mp4">
+            </video></div>
+        </div>
       </div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
     </div>
     <div class="project-thumbs">
       <div
         class="project-thumbs-swiper swiper js-project-thumbs-swiper w-dyn-list swiper-initialized swiper-horizontal swiper-backface-hidden">
-        <div role="list" class="project-thumbs-wrapper swiper-wrapper w-dyn-items"
-          id="swiper-wrapper-e5b10ba1df1072d186" aria-live="off" style="transform: translate3d(0px, 0px, 0px);">
-          <div role="group" class="project-thumbs-slide swiper-slide w-dyn-item swiper-slide-active" aria-label="1 / 4"
+        <div role="list" class="project-thumbs-wrapper swiper-wrapper w-dyn-items" id="swiper-wrapper-9d6a823b7ab8edd6"
+          aria-live="off"
+          style="transition-duration: 0ms; transform: translate3d(-350px, 0px, 0px); transition-delay: 0ms;">
+          <div role="group" class="project-thumbs-slide swiper-slide w-dyn-item swiper-slide-prev" aria-label="1 / 4"
             data-swiper-slide-index="0">
             <div class="project-thumb"><img
                 src="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67b738cac57d7a3118a8b961_Project%202.webp"
                 loading="lazy" alt="" class="media-featured-image"></div>
           </div>
-          <div role="group" class="project-thumbs-slide swiper-slide w-dyn-item swiper-slide-next" aria-label="2 / 4"
-            data-swiper-slide-index="1">
+          <div role="group"
+            class="project-thumbs-slide swiper-slide w-dyn-item swiper-slide-active swiper-slide-playing"
+            aria-label="2 / 4" data-swiper-slide-index="1">
             <div class="project-thumb"><img
                 src="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67b738cac57d7a3118a8b961_Project%202.webp"
                 loading="lazy" alt="" class="media-featured-image"></div>
           </div>
-          <div role="group" class="project-thumbs-slide swiper-slide w-dyn-item" aria-label="3 / 4"
+          <div role="group" class="project-thumbs-slide swiper-slide w-dyn-item swiper-slide-next" aria-label="3 / 4"
             data-swiper-slide-index="2">
             <div class="project-thumb"><img
                 src="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67b738c0c57d7a3118a8b077_Project%203.webp"
@@ -341,9 +805,9 @@
       </div>
       <div
         class="project-thumbs-nav js-project-thumbs-nav swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
-        <span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"
-          aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0"
-          role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0"
+        <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span
+          class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"
+          aria-label="Go to slide 2" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0"
           role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0"
           role="button" aria-label="Go to slide 4"></span></div>
     </div>
@@ -585,6 +1049,9 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.prod.website-files.com/6798c785687c3eaa0e8252bb/js/webflow.ac711976.1089bac13ebe975a.js"
     type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/gh/tomtanan/brit-phelan-main@refs/heads/main/dist/assets/main-B6KnTpda.js"
+    type="text/javascript"></script>
   <script type="module" src="main.js"></script>
 </body>
+
 </html>
