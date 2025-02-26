@@ -1,6 +1,6 @@
 .project-thumbs .swiper-slide {
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.7;
   transition: opacity 0.2s ease;
 }
 .project-thumbs .swiper-slide-playing {
@@ -32,7 +32,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  width: 250px !important;
+  width: 190px !important;
 }
 .project-thumbs-nav .swiper-pagination-bullet {
   background-color: var(--white);
@@ -48,4 +48,24 @@
 }
 .no-touch .project-thumbs .swiper-slide:hover{
   opacity: 1;
+}
+@media (min-width: 480px) {
+  .project-thumbs-nav {
+    width: 250px !important;
+  }
+}
+@media (min-width: 768px) {
+  .project-thumbs-nav {
+    width: 300px !important;
+  }
+}
+@media (min-width: 992px) {
+  .project-thumbs-nav {
+    width: 250px !important;
+  }
+}
+@media (min-width: 1920px) {
+  .project-thumbs-nav {
+    width: 330px !important;
+  }
 }
