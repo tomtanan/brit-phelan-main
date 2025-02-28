@@ -49,6 +49,12 @@
 .no-touch .project-thumbs .swiper-slide:hover{
   opacity: 1;
 }
+.no-touch .more-videos-link .icon-play {
+  transition: transform 0.2s ease;
+}
+.no-touch .more-videos-link:hover .icon-play {
+  transform: scale(1.2);
+}
 @media (min-width: 480px) {
   .project-thumbs-nav {
     width: 250px !important;

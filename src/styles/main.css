@@ -4,5 +4,6 @@
 @import 'libs/buttons';
 @import 'styles/modules/nav';
 @import 'styles/modules/projects';
+@import 'styles/modules/episodes';
 @import 'styles/modules/modal';
 @import 'styles/modules/video-player';

@@ -1,10 +1,12 @@
 import modal from '../modules/modal.js';
 import projects from '../modules/projects.js';
 import videoPlayer from '../modules/video-player.js';
+import episodes from '../modules/episodes.js';
 
 export const modulesMap = {
   'modal': modal,
   'projects': projects,
+  'episodes': episodes,
   'video-player': videoPlayer
 };
 

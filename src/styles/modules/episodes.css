@@ -1,0 +1,29 @@
+.episodes .swiper-wrapper {
+  gap: 0;
+}
+.episodes .swiper-slide {
+  transition: transform 0.2s ease;
+}
+.episodes .swiper-slide .overlay {
+  transition: opacity 0.2s ease;
+}
+.episodes .swiper-slide-active {
+  cursor: pointer;
+  transform: scale(1.1);
+  z-index: 9;
+}
+.episodes .swiper-slide-active .overlay {
+  opacity: 0;
+}
+.no-touch .episodes-nav-btn {
+  transition: opacity 0.2s ease;
+}
+.no-touch .episodes-nav-btn:hover {
+  opacity: 0.5;
+}
+.no-touch .swiper-slide-active .icon-play {
+  transition: transform 0.2s ease;
+}
+.no-touch .swiper-slide-active:hover .icon-play {
+  transform: scale(1.2);
+}
