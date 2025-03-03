@@ -49,11 +49,11 @@
 .no-touch .project-thumbs .swiper-slide:hover{
   opacity: 1;
 }
-.no-touch .more-videos-link .icon-play {
+.no-touch .more-videos-link .icon-background {
   transition: transform 0.2s ease;
 }
-.no-touch .more-videos-link:hover .icon-play {
-  transform: scale(1.2);
+.no-touch .more-videos-link:hover .icon-background {
+  transform: scale(1.1);
 }
 @media (min-width: 480px) {
   .project-thumbs-nav {

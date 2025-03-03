@@ -26,8 +26,10 @@
   display: flex;
   height: 60px;
   justify-content: space-between;
+  padding: 0 5px;
   position: absolute;
   width: 100%;
+  z-index: 3;
 }
 .video-controls .play-btn,
 .video-controls .sound-btn,
@@ -122,7 +124,7 @@
   position: absolute;
   z-index: 9;
 }
-.sound-settings {
+.volume-settings {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -132,12 +134,13 @@
   transition: width 0.2s ease;
   width: 0;
 }
-.sound-settings.active {
+.volume-settings.active {
   width: 60px;
 }
 .volume-slider {
   -webkit-appearance: none;
   appearance: none;
+  cursor: pointer;
   height: 1px;
   background: rgba(255, 255, 255, 0.5); 
   outline: none;
@@ -173,4 +176,9 @@
   cursor: pointer;
   width: 1px;
   height: 9px;
+}
+@media (min-width: 480px) {
+  .video-controls {
+    padding: 0 25px;
+  }
 }

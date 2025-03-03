@@ -21,9 +21,9 @@
 .no-touch .episodes-nav-btn:hover {
   opacity: 0.5;
 }
-.no-touch .swiper-slide-active .icon-play {
+.no-touch .swiper-slide-active .icon-background {
   transition: transform 0.2s ease;
 }
-.no-touch .swiper-slide-active:hover .icon-play {
-  transform: scale(1.2);
+.no-touch .swiper-slide-active:hover .icon-background {
+  transform: scale(1.1);
 }
