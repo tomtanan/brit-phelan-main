@@ -8,12 +8,15 @@ class VideoPlayer {
 
   constructor(el) {
     this.el = el;
-    this.vimeoId = el.getAttribute('data-video-id');
+    this.vimeoId = el.getAttribute('data-vimeo-id');
+    this.youtubeId = el.getAttribute('data-youtube-id');
+    this.isYouTube = this.youtubeId && this.youtubeId.trim() !== '';
     this.player = null;
     this.video = $('.js-video', this.el);
+    this.controls = $('.js-controls', this.el);
+    this.overlay = $('.js-overlay', this.el);
     this.playBtn = $('.js-play', this.el);
     this.fullscreenBtn = $('.js-fullscreen', this.el);
-    this.overlay = $('.js-overlay', this.el);
     this.timeline = $('.js-timeline', this.el);
     this.timelineProgress = $('.js-timeline-prog', this.el);
     this.soundBtn = $('.js-sound', this.el);
@@ -22,7 +25,11 @@ class VideoPlayer {
     this.volumeState = 0.5;
     this.videoLoaded = false;
 
-    // Remove volume slider if touch device
+    if (this.isYouTube) {
+      if (this.controls) this.controls.remove();
+      if (this.overlay) this.overlay.remove();
+    }
+
     if (isTouchDevice() && this.volumeSlider) {
       this.volumeSlider.remove();
     }
@@ -33,58 +40,67 @@ class VideoPlayer {
 
   setupPlayer() {
     if (this.videoLoaded) return;
-
     this.injectIframe();
     this.videoLoaded = true;
 
-    this.player = new Player(this.video);
-    this.player.setVolume(this.volumeState);
-
-    this.player.on('timeupdate', ({ seconds, duration }) => {
-      this.timelineProgress.style.width = `${(seconds / duration) * 100}%`;
-    });
-
-    this.player.on('ended', () => removeClass(this.playBtn, 'active'));
+    if (!this.isYouTube) {
+      this.player = new Player(this.video);
+      this.player.setVolume(this.volumeState);
+      this.player.on('timeupdate', ({ seconds, duration }) => {
+        this.timelineProgress.style.width = `${(seconds / duration) * 100}%`;
+      });
+      this.player.on('ended', () => removeClass(this.playBtn, 'active'));
+    }
   }
 
   injectIframe() {
     if (!this.video || this.videoLoaded) return;
 
     const iframe = document.createElement('iframe');
-    iframe.src = `https://player.vimeo.com/video/${this.vimeoId}?controls=0&dnt=1`;
-    iframe.width = "100%";
-    iframe.height = "100%";
-    iframe.frameBorder = "0";
-    iframe.allow = "autoplay; fullscreen";
+    if (this.isYouTube) {
+      iframe.src = `https://www.youtube.com/embed/${this.youtubeId}?modestbranding=1&rel=0&playsinline=1`;
+    } else {
+      iframe.src = `https://player.vimeo.com/video/${this.vimeoId}?controls=0&dnt=1`;
+    }
+    iframe.width = '100%';
+    iframe.height = '100%';
+    iframe.frameBorder = '0';
+    iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+    iframe.style = "border: none;";
 
-    this.video.appendChild(iframe); // Append instead of replacing
+    this.video.appendChild(iframe);
+
+    this.videoLoaded = true; // Prevent duplicates
   }
 
   bindEvents() {
-    on(this.playBtn, 'click', () => this.togglePlay());
-    on(this.overlay, 'click', () => this.togglePlay());
-    on(this.fullscreenBtn, 'click', () => this.toggleFullscreen());
-    on(this.timeline, 'click', (e) => this.seek(e));
-    on(document, 'keydown', (e) => this.handleKeyPress(e));
-    on(document, 'fullscreenchange', () => this.handleFullscreenChange());
+    if (!this.isYouTube) {
+      on(this.playBtn, 'click', () => this.togglePlay());
+      on(this.overlay, 'click', () => this.togglePlay());
+      on(this.fullscreenBtn, 'click', () => this.toggleFullscreen());
+      on(this.timeline, 'click', (e) => this.seek(e));
+      on(document, 'keydown', (e) => this.handleKeyPress(e));
+      on(document, 'fullscreenchange', () => this.handleFullscreenChange());
 
-    if (!isTouchDevice()) {
-      on(this.soundBtn, 'click', () => toggleClass(this.volumeSettings, 'active'));
-      on(this.volumeSlider, 'input', () => this.adjustVolume(this.volumeSlider.value));
-    } else {
-      on(this.soundBtn, 'click', () => this.toggleVolume());
-    }
-
-    on(document, 'click', (e) => {
-      if (this.soundBtn && this.volumeSettings && 
-          !this.soundBtn.contains(e.target) && !this.volumeSettings.contains(e.target)) {
-        removeClass(this.volumeSettings, 'active');
+      if (!isTouchDevice()) {
+        on(this.soundBtn, 'click', () => toggleClass(this.volumeSettings, 'active'));
+        on(this.volumeSlider, 'input', () => this.adjustVolume(this.volumeSlider.value));
+      } else {
+        on(this.soundBtn, 'click', () => this.toggleVolume());
       }
-    });
 
+      on(document, 'click', (e) => {
+        if (this.soundBtn && this.volumeSettings && 
+            !this.soundBtn.contains(e.target) && !this.volumeSettings.contains(e.target)) {
+          removeClass(this.volumeSettings, 'active');
+        }
+      });
+
+      emitter.on('openModal', () => this.togglePlay());
+    }
     emitter.on('closeModal', () => this.reset());
-    emitter.on('openModal', () => this.togglePlay());
   }
+
 
   adjustVolume(value) {
     this.player.setVolume(value);
@@ -98,8 +114,11 @@ class VideoPlayer {
 
   updateSoundButtonClass(volume) {
     removeClass(this.soundBtn, 'set-0 set-50');
-    addClass(this.soundBtn, volume === 0 ? 'set-0' : volume < 0.6 ? 'set-50' : '');
+    
+    const classToAdd = volume === 0 ? 'set-0' : volume < 0.6 ? 'set-50' : null;
+    if (classToAdd) addClass(this.soundBtn, classToAdd);
   }
+  
 
   handleKeyPress(event) {
     if (event.code === 'Space' && getActivePlayer() === this.el) {
@@ -119,10 +138,19 @@ class VideoPlayer {
   }
 
   reset() {
-    this.player.pause();
-    this.player.setCurrentTime(0);
-    this.adjustVolume(0.5);
-    removeClass(this.playBtn, 'active');
+    console.log(this)
+    if (this.isYouTube) {
+      const iframe = $('iframe', this.video);
+      console.log(iframe)
+      if (iframe) {
+        iframe.src = iframe.src;
+      }
+    } else {
+      this.player.pause();
+      this.player.setCurrentTime(0);
+      this.adjustVolume(0.5);
+      removeClass(this.playBtn, 'active');
+    }
   }
 
   toggleFullscreen() {
