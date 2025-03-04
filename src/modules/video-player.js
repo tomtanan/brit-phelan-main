@@ -64,7 +64,6 @@ class VideoPlayer {
     }
     iframe.width = '100%';
     iframe.height = '100%';
-    iframe.frameBorder = '0';
     iframe.allow = 'autoplay; fullscreen; picture-in-picture';
     iframe.style = "border: none;";
 
@@ -75,7 +74,7 @@ class VideoPlayer {
 
   bindEvents() {
     if (!this.isYouTube) {
-      on(this.playBtn, 'click', () => this.togglePlay());
+      on(this.playBtn, 'click', (e) => this.togglePlay());
       on(this.overlay, 'click', () => this.togglePlay());
       on(this.fullscreenBtn, 'click', () => this.toggleFullscreen());
       on(this.timeline, 'click', (e) => this.seek(e));
@@ -98,7 +97,7 @@ class VideoPlayer {
 
       emitter.on('openModal', () => this.togglePlay());
     }
-    emitter.on('closeModal', () => this.reset());
+    emitter.on('resetPlayer', () => this.reset());
   }
 
 
@@ -138,10 +137,8 @@ class VideoPlayer {
   }
 
   reset() {
-    console.log(this)
     if (this.isYouTube) {
       const iframe = $('iframe', this.video);
-      console.log(iframe)
       if (iframe) {
         iframe.src = iframe.src;
       }

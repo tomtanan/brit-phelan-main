@@ -1,0 +1,6 @@
+.no-touch .more-videos-link .icon-background {
+  transition: transform 0.2s ease;
+}
+.no-touch .more-videos-link:hover .icon-background {
+  transform: scale(1.2);
+}

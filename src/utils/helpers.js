@@ -35,11 +35,16 @@ export const off = (element, event, handler) => {
 };
 
 // Return active modal
-export const getActiveModal = () => $('.js-modal.active', document)[0];
+export const getActiveModal = () => document.querySelector('.js-modal.active');
+
+// Return active slide
+export const getActiveEpisode = () => document.querySelector('.episodes-slide.swiper-slide-active');
 
 // Return active video player
 export const getActivePlayer = () => {
   const modal = getActiveModal();
-  if (!modal) return null;
-  return $('.js-video-player', modal)[0];
+  const episode = getActiveEpisode();
+  if (modal) return modal.querySelector('.js-video-player');
+  if (episode) return episode.querySelector('.js-video');
+  if (!modal && !episode) return null;
 };

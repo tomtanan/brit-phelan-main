@@ -2,7 +2,15 @@
   gap: 0;
 }
 .episodes .swiper-slide {
+  cursor: pointer;
   transition: transform 0.2s ease;
+}
+.episodes .episodes-video {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.episodes .episodes-preview {
+  transition: opacity 0.2s ease;
 }
 .episodes .swiper-slide .overlay {
   transition: opacity 0.2s ease;
@@ -15,15 +23,28 @@
 .episodes .swiper-slide-active .overlay {
   opacity: 0;
 }
+.episodes .swiper-slide-active .episodes-preview {
+  pointer-events: none;
+  opacity: 0;
+}
+.episodes .swiper-slide-active .episodes-video {
+  opacity: 1;
+}
+.episodes-player .video-controls {
+  padding: 0;
+}
+.episodes-player .video-controls .fullscreen-btn {
+  display: none;
+}
 .no-touch .episodes-nav-btn {
   transition: opacity 0.2s ease;
 }
 .no-touch .episodes-nav-btn:hover {
   opacity: 0.5;
 }
-.no-touch .swiper-slide-active .icon-background {
+.no-touch .swiper-slide .icon-background {
   transition: transform 0.2s ease;
 }
-.no-touch .swiper-slide-active:hover .icon-background {
-  transform: scale(1.1);
+.no-touch .swiper-slide:hover .icon-background {
+  transform: scale(1.2);
 }

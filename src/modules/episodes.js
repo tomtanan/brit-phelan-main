@@ -1,16 +1,17 @@
-import { $ } from 'select-dom';
-import { addClass, removeClass } from 'utils/helpers';
+import { $, $$ } from 'select-dom';
 import Swiper from 'swiper/bundle';
 import emitter from 'utils/events';
+import VideoPlayer from './video-player';
 
 const refs = {
   swiper: 'js-episodes-swiper',
   nextBtn: 'js-episodes-nav-next',
   prevBtn: 'js-episodes-nav-prev',
+  preview: 'js-preview',
+  video: 'js-video',
 };
 
 class Episodes {
-  // Store instances to prevent memory leaks
   static instances = new WeakMap();
 
   constructor(el) {
@@ -19,7 +20,6 @@ class Episodes {
     this.init();
   }
 
-  // Initialize Swiper instance
   init() {
     if (!this.swiper) {
       this.swiper = new Swiper($(`.${refs.swiper}`, this.el), {
@@ -33,11 +33,25 @@ class Episodes {
           nextEl: `.${refs.nextBtn}`,
           prevEl: `.${refs.prevBtn}`,
         },
+        on: {
+          init: () => this.initVideoPlayer(),
+          slideChangeTransitionStart: () => emitter.emit('resetPlayer'),
+          slideChangeTransitionEnd: () => this.initVideoPlayer(),
+        },
       });
     }
   }
 
-  // Destroy Swiper instance and clean up
+  initVideoPlayer() {
+    const activeSlide = $('.swiper-slide-active', this.el);
+    if (activeSlide) {
+      const videoContainer = $(`.${refs.video}`, activeSlide);
+      if (videoContainer && !VideoPlayer.instances.has(videoContainer)) {
+        VideoPlayer.init(videoContainer);
+      }
+    }
+  }  
+
   destroy() {
     if (this.swiper) {
       this.swiper.destroy(true, true);
@@ -45,14 +59,12 @@ class Episodes {
     }
   }
 
-  // Initialize an instance for a given element
   static init(el) {
     if (!Episodes.instances.has(el)) {
       Episodes.instances.set(el, new Episodes(el));
     }
   }
 
-  // Destroy an instance for a given element
   static destroy(el) {
     const instance = Episodes.instances.get(el);
     if (instance) {

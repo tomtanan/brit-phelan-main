@@ -50,6 +50,7 @@ class Modal {
     removeClass(document.body, 'scroll-lock');
     removeClass(this.modal, 'active');
     emitter.emit('closeModal');
+    emitter.emit('resetPlayer');
   }
 
   // Bind event listeners
