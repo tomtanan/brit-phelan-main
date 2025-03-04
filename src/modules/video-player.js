@@ -132,6 +132,7 @@ class VideoPlayer {
       this.player.getPaused().then((paused) => {
         paused ? this.player.play() : this.player.pause();
         toggleClass(this.playBtn, 'active', !paused);
+        emitter.emit('togglePlay', paused);
       });
     }
   }

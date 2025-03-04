@@ -1,3 +1,6 @@
+
+import { $$ } from 'select-dom';
+import { watchVideos, on } from 'utils/helpers';
 import modal from '../modules/modal.js';
 import projects from '../modules/projects.js';
 import videoPlayer from '../modules/video-player.js';
@@ -13,8 +16,8 @@ export const modulesMap = {
 };
 
 // Automatically initialize sections based on the data-module attribute
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('[data-module]').forEach((element) => {
+on(document, 'DOMContentLoaded', () => {
+  $$('[data-module]', document).forEach((element) => {
     const moduleName = element.getAttribute('data-module');
     const module = modulesMap[moduleName];
 
@@ -26,4 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error(`Invalid module structure for: ${moduleName}`);
     }
   });
+
+  watchVideos('video');
 });

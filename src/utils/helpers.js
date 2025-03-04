@@ -48,3 +48,16 @@ export const getActivePlayer = () => {
   if (episode) return episode.querySelector('.js-video');
   if (!modal && !episode) return null;
 };
+
+export const watchVideos = (sel = 'video', t = 0.5) => {
+  const videos = document.querySelectorAll(sel);
+  if (!videos.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      e.isIntersecting ? e.target.play().catch(() => {}) : e.target.pause();
+    });
+  }, { threshold: t });
+
+  videos.forEach(video => observer.observe(video));
+};

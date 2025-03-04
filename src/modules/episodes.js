@@ -17,7 +17,9 @@ class Episodes {
   constructor(el) {
     this.el = el;
     this.swiper = null;
+    this.previews = $$(`.${refs.preview}`, this.el);
     this.init();
+    this.bindEvents();
   }
 
   init() {
@@ -40,6 +42,14 @@ class Episodes {
         },
       });
     }
+  }
+
+  bindEvents() {
+    emitter.on('togglePlay', (paused) => {
+      this.previews.forEach((preview) => {
+        $('video', preview)?.[paused ? 'pause' : 'play']();
+      });
+    });
   }
 
   initVideoPlayer() {
