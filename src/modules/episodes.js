@@ -23,6 +23,10 @@ class Episodes {
   }
 
   init() {
+    if ($$('.swiper-slide', this.el).length <= 0) {
+      return;
+    }
+
     if (!this.swiper) {
       this.swiper = new Swiper($(`.${refs.swiper}`, this.el), {
         slidesPerView: 'auto',

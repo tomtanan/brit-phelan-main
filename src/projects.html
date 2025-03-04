@@ -1,7 +1,7 @@
 <html data-wf-domain="brit-phelan-main.webflow.io" data-wf-page="679b5af7321f143fc186cebd"
   data-wf-site="6798c785687c3eaa0e8252bb" data-wf-collection="679b5af7321f143fc186ceae"
   data-wf-item-slug="something-happened"
-  class="w-mod-js wf-oswald-n3-active wf-oswald-n4-active wf-oswald-n2-active wf-oswald-n5-active wf-oswald-n6-active wf-oswald-n7-active wf-active">
+  class="w-mod-js wf-oswald-n5-active wf-oswald-n6-active wf-oswald-n3-active wf-oswald-n2-active wf-oswald-n7-active wf-oswald-n4-active wf-active">
 
 <head>
   <style>
@@ -42,537 +42,8 @@
   <link
     href="https://cdn.prod.website-files.com/6798c785687c3eaa0e8252bb/67c6b90ae2d8f7ca26bb868e_67607eebc6e2a226a0fbba29_Favicon.jpg"
     rel="apple-touch-icon">
-  <style>
-    :root {
-      --black: #0c0c0c;
-      --white: #fff
-    }
-
-    @keyframes progress {
-      0% {
-        width: 0
-      }
-
-      to {
-        width: 100%
-      }
-    }
-
-    .w-webflow-badge {
-      display: none !important
-    }
-
-    body {
-      line-height: 1
-    }
-
-    .no-touch .button {
-      transition: opacity .2s ease
-    }
-
-    .no-touch .button:hover {
-      opacity: .5
-    }
-
-    .navbar:not(.mobile-menu--open).black .nav-link {
-      color: var(--black)
-    }
-
-    .navbar:not(.mobile-menu--open).black .logo-letter {
-      fill: var(--black)
-    }
-
-    .navbar:not(.mobile-menu--open).black .nav-line {
-      background-color: var(--black)
-    }
-
-    .nav-link {
-      transition: opacity .2s ease
-    }
-
-    .nav-line {
-      transition: background-color .3s ease, opacity .2s ease, top .2s ease, transform .2s ease
-    }
-
-    .no-touch .nav-link:hover {
-      opacity: 1
-    }
-
-    .no-touch .nav-link-contact:hover {
-      opacity: .2
-    }
-
-    .w-nav-overlay {
-      width: 100vw !important
-    }
-
-    .w-nav-overlay .w-nav-menu {
-      align-content: center;
-      display: flex !important;
-      flex-wrap: wrap;
-      justify-content: center
-    }
-
-    .w-nav-overlay .nav-link {
-      flex: 0 0 auto;
-      height: auto;
-      padding: 10px 20px
-    }
-
-    .w-nav-overlay .nav-link-contact {
-      bottom: 20px;
-      left: 0;
-      margin: 0 auto;
-      position: absolute;
-      right: 0 !important
-    }
-
-    .w-nav-button.w--open {
-      background: none !important
-    }
-
-    .w-nav-button.w--open .nav-line.line-2 {
-      transform: rotate(45deg)
-    }
-
-    .w-nav-button.w--open .nav-line.line-1,
-    .w-nav-button.w--open .nav-line.line-3 {
-      top: calc(50% - .5px);
-      transform: rotate(-45deg)
-    }
-
-    .w-nav-button.w--open .nav-line.line-1 {
-      opacity: 0
-    }
-
-    .logo svg {
-      display: block;
-      height: 100%;
-      -o-object-fit: contain;
-      object-fit: contain;
-      width: 100%
-    }
-
-    .no-touch .logo {
-      transition: opacity .2s ease
-    }
-
-    .no-touch .logo:hover {
-      opacity: .2
-    }
-
-    .project-thumbs .swiper-slide {
-      cursor: pointer;
-      opacity: .7;
-      transition: opacity .2s ease
-    }
-
-    .project-thumbs .swiper-slide-playing {
-      opacity: 1
-    }
-
-    .project-thumbs .swiper-slide-playing:before,
-    .project-thumbs .swiper-slide-playing:after {
-      background: var(--white);
-      bottom: 0;
-      content: "";
-      height: 2px;
-      left: 0;
-      position: absolute;
-      transition: opacity .2s ease;
-      width: 100%
-    }
-
-    .project-thumbs .swiper-slide-playing:before {
-      opacity: .3;
-      z-index: 1
-    }
-
-    .project-thumbs .swiper-slide-playing:after {
-      animation: progress 11s linear;
-      z-index: 2
-    }
-
-    .project-thumbs .swiper-slide-prev {
-      opacity: 0
-    }
-
-    .project-thumbs-nav {
-      align-items: center;
-      display: flex;
-      justify-content: center;
-      width: 190px !important
-    }
-
-    .project-thumbs-nav .swiper-pagination-bullet {
-      background-color: var(--white);
-      height: 4px;
-      opacity: .5;
-      transition: opacity .2s ease, width .2s ease, height .2s ease;
-      width: 4px
-    }
-
-    .project-thumbs-nav .swiper-pagination-bullet-active {
-      height: 10px;
-      opacity: 1;
-      width: 10px
-    }
-
-    .no-touch .project-thumbs .swiper-slide:hover {
-      opacity: 1
-    }
-
-    .no-touch .more-videos-link .icon-play {
-      transition: transform .2s ease
-    }
-
-    .no-touch .more-videos-link:hover .icon-play {
-      transform: scale(1.2)
-    }
-
-    @media (min-width: 480px) {
-      .project-thumbs-nav {
-        width: 250px !important
-      }
-    }
-
-    @media (min-width: 768px) {
-      .project-thumbs-nav {
-        width: 300px !important
-      }
-    }
-
-    @media (min-width: 992px) {
-      .project-thumbs-nav {
-        width: 250px !important
-      }
-    }
-
-    @media (min-width: 1920px) {
-      .project-thumbs-nav {
-        width: 330px !important
-      }
-    }
-
-    .episodes .swiper-wrapper {
-      gap: 0
-    }
-
-    .episodes .swiper-slide {
-      transition: transform .2s ease
-    }
-
-    .episodes .swiper-slide .overlay {
-      transition: opacity .2s ease
-    }
-
-    .episodes .swiper-slide-active {
-      cursor: pointer;
-      transform: scale(1.1);
-      z-index: 9
-    }
-
-    .episodes .swiper-slide-active .overlay {
-      opacity: 0
-    }
-
-    .no-touch .episodes-nav-btn {
-      transition: opacity .2s ease
-    }
-
-    .no-touch .episodes-nav-btn:hover {
-      opacity: .5
-    }
-
-    .no-touch .swiper-slide-active .icon-play {
-      transition: transform .2s ease
-    }
-
-    .no-touch .swiper-slide-active:hover .icon-play {
-      transform: scale(1.2)
-    }
-
-    .modal {
-      transition: opacity .3s ease
-    }
-
-    .modal.active {
-      opacity: 1;
-      pointer-events: auto
-    }
-
-    .modal-title {
-      font-size: 24px;
-      font-weight: 400;
-      position: absolute;
-      left: 20px;
-      top: 40px;
-      z-index: 3
-    }
-
-    .modal-content {
-      align-items: center;
-      bottom: auto;
-      display: flex;
-      flex-direction: column;
-      height: calc(100vh - 70px);
-      justify-content: center;
-      position: absolute;
-      top: auto;
-      z-index: 2
-    }
-
-    .modal-content:before,
-    .modal-content:after {
-      content: none
-    }
-
-    .modal-title {
-      top: 22px
-    }
-
-    .modal-close {
-      position: absolute;
-      right: 20px;
-      top: 30px;
-      transition: opacity .2s ease;
-      z-index: 9
-    }
-
-    .no-touch .modal-close:hover {
-      opacity: .5
-    }
-
-    @media (min-width: 480px) {
-      .modal-title {
-        left: 40px
-      }
-
-      .modal-close {
-        right: 40px
-      }
-    }
-
-    @media (min-width: 992px) {
-      .modal-title {
-        font-size: 26px;
-        top: 30px
-      }
-
-      .modal-close {
-        top: 35px
-      }
-    }
-
-    @supports (-webkit-touch-callout: none) {
-      .modal-content {
-        height: calc(100dvh - 70px)
-      }
-    }
-
-    .video-player {
-      width: 100%
-    }
-
-    .video-screen {
-      aspect-ratio: 16 / 9;
-      position: relative;
-      width: 100%
-    }
-
-    .video-iframe {
-      aspect-ratio: 16 / 9;
-      height: 100%;
-      width: 100%;
-      z-index: 1
-    }
-
-    .video-overlay {
-      cursor: pointer;
-      height: 100%;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      position: absolute;
-      width: 100%;
-      z-index: 2
-    }
-
-    .video-controls {
-      align-items: center;
-      bottom: 0;
-      display: flex;
-      height: 60px;
-      justify-content: space-between;
-      position: absolute;
-      width: 100%
-    }
-
-    .video-controls .play-btn,
-    .video-controls .sound-btn,
-    .video-controls .fullscreen-btn {
-      height: 60px;
-      width: 50px
-    }
-
-    .video-controls .play-btn,
-    .video-controls .sound-btn,
-    .video-controls .fullscreen-btn {
-      align-items: center;
-      background: none;
-      display: flex;
-      justify-content: center;
-      padding: 0;
-      text-align: left;
-      transition: opacity .2s ease
-    }
-
-    .video-controls .play-btn:hover,
-    .video-controls .sound-btn:hover,
-    .video-controls .fullscreen-btn:hover {
-      opacity: .5
-    }
-
-    .video-controls .play-btn .ico-play {
-      display: block
-    }
-
-    .video-controls .play-btn .ico-pause,
-    .video-controls .play-btn.active .ico-play {
-      display: none
-    }
-
-    .video-controls .play-btn.active .ico-pause {
-      display: block
-    }
-
-    .sound-btn.set-0 .ico-sound-50,
-    .sound-btn.set-0 .ico-sound-100,
-    .sound-btn.set-50 .ico-sound-100 {
-      display: none
-    }
-
-    .video-controls .timeline {
-      cursor: pointer;
-      flex-grow: 1;
-      height: 15px;
-      margin: 0 10px;
-      padding: 0;
-      position: relative
-    }
-
-    .video-controls .timeline:before {
-      background: #ffffff4d;
-      bottom: 0;
-      content: "";
-      height: 1px;
-      left: 0;
-      margin: auto;
-      position: absolute;
-      top: 0;
-      width: 100%
-    }
-
-    .video-controls .timeline-progress {
-      background: var(--white);
-      bottom: 0;
-      height: 1px;
-      left: 0;
-      margin: auto;
-      position: absolute;
-      top: 0;
-      transition: width .5s ease;
-      width: 0
-    }
-
-    .video-controls .fullscreen-btn .ico-resize,
-    .video-controls .fullscreen-btn.active .ico-fullscreen {
-      display: none
-    }
-
-    .video-controls .fullscreen-btn.active .ico-resize {
-      display: block
-    }
-
-    .video-player.is-fullscreen .video-screen {
-      max-height: none;
-      height: 100vh;
-      position: relative;
-      width: 100vw;
-      z-index: 1
-    }
-
-    .video-player.is-fullscreen .video-controls {
-      bottom: 0;
-      padding: 0 10px;
-      position: absolute;
-      z-index: 9
-    }
-
-    .sound-settings {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      height: 10px;
-      justify-content: center;
-      overflow: hidden;
-      transition: width .2s ease;
-      width: 0
-    }
-
-    .sound-settings.active {
-      width: 60px
-    }
-
-    .volume-slider {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      height: 1px;
-      background: #ffffff80;
-      outline: none;
-      padding: 0;
-      width: 100%
-    }
-
-    .volume-slider::-webkit-slider-runnable-track,
-    .volume-slider::-moz-range-track,
-    .volume-slider::-ms-track {
-      background: #ffffff80;
-      height: 1px
-    }
-
-    .volume-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      background: var(--white);
-      cursor: pointer;
-      width: 1px;
-      height: 9px
-    }
-
-    .volume-slider::-moz-range-thumb {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      background: var(--white);
-      cursor: pointer;
-      width: 1px;
-      height: 9px
-    }
-
-    .volume-slider::-ms-thumb {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      background: var(--white);
-      cursor: pointer;
-      width: 1px;
-      height: 9px
-    }
-  </style><!-- [Attributes by Finsweet] CMS Slider -->
+  <link href="https://cdn.jsdelivr.net/gh/tomtanan/brit-phelan-main@refs/heads/main/dist/assets/main-BL17Sq14.css"
+    rel="stylesheet"><!-- [Attributes by Finsweet] CMS Slider -->
   <script async="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsslider@1/cmsslider.js"></script>
   <style type="text/css">
     @font-face {
@@ -590,7 +61,7 @@
   </style>
 </head>
 
-<body class="body no-touch">
+<body class="body no-touch" cz-shortcut-listen="true">
   <div data-animation="over-right" class="navbar w-nav" data-easing2="ease-in-out" data-easing="ease-in-out"
     data-collapse="medium" role="banner" data-no-scroll="1" data-duration="500" id="nav" data-doc-height="1">
     <div class="container-full container-nav w-container"><a href="/" class="logo w-nav-brand" aria-label="home">
@@ -628,16 +99,9 @@
         <div class="project-hero-content">
           <div class="laurels w-dyn-list">
             <script type="text/x-wf-template"
-              id="wf-template-92c4e977-9655-b993-efa1-0113d8dfa36b">%3Cdiv%20role%3D%22listitem%22%20class%3D%22laurels-item%20w-dyn-item%20w-dyn-repeater-item%22%3E%3Cimg%20src%3D%22https%3A%2F%2Fcdn.prod.website-files.com%2F679b5af79bb4903de9f59d93%2F67a08b1a7547bb83a8cc6a9e_Laurel%25202.png%22%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22laurel-image%22%2F%3E%3C%2Fdiv%3E</script>
-            <div role="list" class="laurels-list w-dyn-items">
-              <div role="listitem" class="laurels-item w-dyn-item w-dyn-repeater-item"><img
-                  src="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67a08b1a7547bb83a8cc6a9e_Laurel%202.png"
-                  loading="lazy" alt="" class="laurel-image"></div>
-              <div role="listitem" class="laurels-item w-dyn-item w-dyn-repeater-item"><img
-                  src="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67a08b1a7547bb83a8cc6a9e_Laurel%202.png"
-                  loading="lazy" alt="" class="laurel-image"></div>
-            </div>
-            <div class="empty-state w-dyn-hide w-dyn-empty"></div>
+              id="wf-template-92c4e977-9655-b993-efa1-0113d8dfa36b">%3Cdiv%20role%3D%22listitem%22%20class%3D%22laurels-item%20w-dyn-item%20w-dyn-repeater-item%22%3E%3Cimg%20src%3D%22https%3A%2F%2Fcdn.prod.website-files.com%2Fplugins%2FBasic%2Fassets%2Fplaceholder.60f9b1840c.svg%22%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22laurel-image%20w-dyn-bind-empty%22%2F%3E%3C%2Fdiv%3E</script>
+            <div role="list" class="laurels-list w-dyn-items w-dyn-hide"></div>
+            <div class="empty-state w-dyn-empty"></div>
           </div>
           <h2 class="h1 project-hero-title">Something Happened</h2>
           <p class="p1 project-hero-text">In the aftermath of a sexual assault case gone wrong, a young woman and her
@@ -651,7 +115,7 @@
                 <div class="icon-background"></div>
               </div>
               <div class="button-text">Watch Trailer</div>
-            </a><a href="https://www.youtube.com/" target="_blank" class="button button-secondary w-inline-block">
+            </a><a href="#" class="button button-secondary w-inline-block w-condition-invisible">
               <div class="icon-videos">
                 <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
                     <path fill="#fff"
@@ -722,9 +186,9 @@
     </div>
     <div class="project-hero-background">
       <div class="gradient"></div><img
-        src="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c35d845a0c70363ece8520_SH%20Hero%20Image.webp"
+        src="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c712825524d0fd7e4898e5_SH-Hero-Image.webp"
         loading="lazy" alt="" sizes="100vw"
-        srcset="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c35d845a0c70363ece8520_SH%20Hero%20Image-p-500.webp 500w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c35d845a0c70363ece8520_SH%20Hero%20Image-p-800.webp 800w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c35d845a0c70363ece8520_SH%20Hero%20Image-p-1080.webp 1080w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c35d845a0c70363ece8520_SH%20Hero%20Image.webp 1440w"
+        srcset="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c712825524d0fd7e4898e5_SH-Hero-Image-p-500.webp 500w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c712825524d0fd7e4898e5_SH-Hero-Image-p-800.webp 800w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c712825524d0fd7e4898e5_SH-Hero-Image-p-1080.webp 1080w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c712825524d0fd7e4898e5_SH-Hero-Image-p-1600.webp 1600w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c712825524d0fd7e4898e5_SH-Hero-Image-p-2000.webp 2000w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c712825524d0fd7e4898e5_SH-Hero-Image-p-2600.webp 2600w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c712825524d0fd7e4898e5_SH-Hero-Image.webp 2880w"
         class="project-hero-image">
     </div>
   </section>
@@ -795,10 +259,10 @@
           </div>
         </div>
         <div class="media-featured director-statement-item item-2"><img
-            src="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c34c0dd95b150d2aa8dea6_SH%20-%20FEATURED%20MEDIA%20IMAGE%202.webp"
+            src="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c712870c6d42945c984215_SH%20-%20FEATURED%20MEDIA%202%20IMAGE.webp"
             loading="lazy" alt=""
             sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1439px) 54vw, 738px"
-            srcset="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c34c0dd95b150d2aa8dea6_SH%20-%20FEATURED%20MEDIA%20IMAGE%202-p-500.webp 500w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c34c0dd95b150d2aa8dea6_SH%20-%20FEATURED%20MEDIA%20IMAGE%202-p-800.webp 800w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c34c0dd95b150d2aa8dea6_SH%20-%20FEATURED%20MEDIA%20IMAGE%202-p-1080.webp 1080w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c34c0dd95b150d2aa8dea6_SH%20-%20FEATURED%20MEDIA%20IMAGE%202.webp 1520w"
+            srcset="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c712870c6d42945c984215_SH%20-%20FEATURED%20MEDIA%202%20IMAGE-p-500.webp 500w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c712870c6d42945c984215_SH%20-%20FEATURED%20MEDIA%202%20IMAGE-p-800.webp 800w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c712870c6d42945c984215_SH%20-%20FEATURED%20MEDIA%202%20IMAGE-p-1080.webp 1080w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c712870c6d42945c984215_SH%20-%20FEATURED%20MEDIA%202%20IMAGE.webp 1520w"
             class="media-featured-image">
           <div class="media-featured-video w-condition-invisible w-embed"><video class="media-featured-video"
               autoplay="" playsinline="" loop="" muted="" preload="auto">
@@ -826,7 +290,7 @@
       </div>
     </div>
   </section>
-  <section data-module="episodes" class="episodes">
+  <section data-module="episodes" class="episodes w-condition-invisible">
     <div class="w-layout-blockcontainer container w-container">
       <div class="episodes-headline">
         <div class="episodes-content">
@@ -834,8 +298,7 @@
           <p class="p1 episodes-text">This is some short text to give more context about those videos. You will be able
             to edit it as well as the title.</p>
         </div>
-        <div class="episodes-nav"><a href="#" class="episodes-nav-btn prev js-episodes-nav-prev w-inline-block"
-            tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-e171ae37842efec2">
+        <div class="episodes-nav"><a href="#" class="episodes-nav-btn prev js-episodes-nav-prev w-inline-block">
             <div class="arrow-svg w-embed"><svg fill="none" viewBox="0 0 13 16">
                 <path fill="#fff" fill-rule="evenodd"
                   d="M10.834.503 3.048 8l7.786 7.48-.336.52-8.331-8 8.337-8 .33.503Z" clip-rule="evenodd"></path>
@@ -849,8 +312,7 @@
               </style>
             </div>
             <div class="hide">Previous<br></div>
-          </a><a href="#" class="episodes-nav-btn next js-episodes-nav-next w-inline-block" tabindex="0" role="button"
-            aria-label="Next slide" aria-controls="swiper-wrapper-e171ae37842efec2">
+          </a><a href="#" class="episodes-nav-btn next js-episodes-nav-next w-inline-block">
             <div class="hide">Next<br></div>
             <div class="arrow-svg w-embed"><svg fill="none" viewBox="0 0 13 16">
                 <path fill="#fff" fill-rule="evenodd" d="M2.167.503 9.951 8l-7.785 7.48.335.52 8.331-8-8.337-8-.33.503Z"
@@ -867,742 +329,48 @@
           </a></div>
       </div>
     </div>
-    <div
-      class="episodes-swiper swiper js-episodes-swiper w-dyn-list swiper-initialized swiper-horizontal swiper-backface-hidden">
-      <div fs-cmsslider-element="list" role="list" class="episodes-wrapper swiper-wrapper w-dyn-items"
-        style="transition-duration: 0ms; transition-delay: 0ms; transform: translate3d(-484.5px, 0px, 0px);"
-        id="swiper-wrapper-e171ae37842efec2" aria-live="polite">
-        <div role="group" class="episodes-slide swiper-slide w-dyn-item" aria-label="7 / 10" data-swiper-slide-index="6"
-          style="margin-right: 40px;">
-          <div class="episodes-player">
-            <div data-youtube-id="" data-vimeo-id="1035687463" class="episodes-video js-video w-embed"
-              data-vimeo-initialized="true">
-              <div class="video-screen js-video">
-                <div class="video-overlay js-overlay"></div>
-              </div>
-              <div class="video-controls js-controls">
-                <button class="play-btn js-play">
-                  <svg class="ico-play" width="16" height="20" viewBox="0 0 16 20" fill="none">
-                    <path d="M15 10 .5 19V1L15 10Z" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-pause" width="10" height="15" viewBox="0 0 10 15" fill="none">
-                    <path d="M1 14.5V0m8 14.5V0" stroke="#fff"></path>
-                  </svg>
-                </button>
-                <button class="sound-btn js-sound">
-                  <svg class="ico-sound ico-mute" width="23" height="19" viewBox="0 0 23 19" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path class="ico-sound-0" d="M14 18L7.25926 13.2353H1V9V5.23529H7.25926L14 1V9V18Z" stroke="#fff">
-                    </path>
-                    <path class="ico-sound-50"
-                      d="M17 5C18.203 6.17009 18.9647 7.90305 18.9647 9.83696C18.9647 11.7709 18.203 13.5038 17 14.6739"
-                      stroke="#fff"></path>
-                    <path class="ico-sound-100"
-                      d="M18 2C20.406 3.85471 21.9294 6.60162 21.9294 9.66707C21.9294 12.7325 20.406 15.4794 18 17.3341"
-                      stroke="#fff"></path>
-                  </svg>
-                </button>
-                <div class="volume-settings js-volume-settings">
-                  <input type="range" class="volume-slider js-volume-slider" min="0" max="1" step="0.01" value="0.5">
-                </div>
-                <div class="timeline js-timeline">
-                  <div class="timeline-progress js-timeline-prog"></div>
-                </div>
-                <button class="fullscreen-btn js-fullscreen">
-                  <svg class="ico-fullscreen" width="20" height="16" viewBox="0 0 20 16" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 10v5.5h6.5M19 10v5.5h-6.5M1 6.5V1h6.5M19 6.5V1h-6.5" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-resize" width="18" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.5 18.5V12H0" stroke="#fff"></path>
-                    <path d="M11.5 18.5V12H18" stroke="#fff"></path>
-                    <path d="M6.5 0v6.5H0" stroke="#fff"></path>
-                    <path d="M11.5 0v6.5H18" stroke="#fff"></path>
-                  </svg>
-                </button>
-              </div><iframe src="https://player.vimeo.com/video/1035687463?app_id=122963" width="426" height="240"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                title="Moschino x SIMS ft Stella Maxwell"></iframe>
-            </div>
-            <div class="episodes-preview js-preview">
-              <div class="episodes-preview-video w-embed"><video class="episodes-preview-video" playsinline="" loop=""
-                  muted="" preload="none">
-                  <source
-                    src="https://player.vimeo.com/progressive_redirect/playback/1056121623/rendition/720p/file.mp4?loc=external&amp;log_user=0&amp;signature=f2412dd6cb0c12465a5a84d8379672ef2754b84b3526f70cd026761ea9c17939&amp;user_id=18829759"
-                    type="video/mp4">
-                </video></div>
-              <div class="overlay"></div>
-              <div class="icon-play">
-                <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
-                    <path fill="#fff" d="m25.057 17.58-11.932 6.888V10.691l11.932 6.888Z"></path>
-                  </svg></div>
-                <div class="icon-background"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div role="group" class="episodes-slide swiper-slide w-dyn-item" aria-label="8 / 10" data-swiper-slide-index="7"
-          style="margin-right: 40px;">
-          <div class="episodes-player">
-            <div data-youtube-id="" data-vimeo-id="1035687463" class="episodes-video js-video w-embed"
-              data-vimeo-initialized="true">
-              <div class="video-screen js-video">
-                <div class="video-overlay js-overlay"></div>
-              </div>
-              <div class="video-controls js-controls">
-                <button class="play-btn js-play">
-                  <svg class="ico-play" width="16" height="20" viewBox="0 0 16 20" fill="none">
-                    <path d="M15 10 .5 19V1L15 10Z" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-pause" width="10" height="15" viewBox="0 0 10 15" fill="none">
-                    <path d="M1 14.5V0m8 14.5V0" stroke="#fff"></path>
-                  </svg>
-                </button>
-                <button class="sound-btn js-sound">
-                  <svg class="ico-sound ico-mute" width="23" height="19" viewBox="0 0 23 19" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path class="ico-sound-0" d="M14 18L7.25926 13.2353H1V9V5.23529H7.25926L14 1V9V18Z" stroke="#fff">
-                    </path>
-                    <path class="ico-sound-50"
-                      d="M17 5C18.203 6.17009 18.9647 7.90305 18.9647 9.83696C18.9647 11.7709 18.203 13.5038 17 14.6739"
-                      stroke="#fff"></path>
-                    <path class="ico-sound-100"
-                      d="M18 2C20.406 3.85471 21.9294 6.60162 21.9294 9.66707C21.9294 12.7325 20.406 15.4794 18 17.3341"
-                      stroke="#fff"></path>
-                  </svg>
-                </button>
-                <div class="volume-settings js-volume-settings">
-                  <input type="range" class="volume-slider js-volume-slider" min="0" max="1" step="0.01" value="0.5">
-                </div>
-                <div class="timeline js-timeline">
-                  <div class="timeline-progress js-timeline-prog"></div>
-                </div>
-                <button class="fullscreen-btn js-fullscreen">
-                  <svg class="ico-fullscreen" width="20" height="16" viewBox="0 0 20 16" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 10v5.5h6.5M19 10v5.5h-6.5M1 6.5V1h6.5M19 6.5V1h-6.5" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-resize" width="18" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.5 18.5V12H0" stroke="#fff"></path>
-                    <path d="M11.5 18.5V12H18" stroke="#fff"></path>
-                    <path d="M6.5 0v6.5H0" stroke="#fff"></path>
-                    <path d="M11.5 0v6.5H18" stroke="#fff"></path>
-                  </svg>
-                </button>
-              </div><iframe src="https://player.vimeo.com/video/1035687463?app_id=122963" width="426" height="240"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                title="Moschino x SIMS ft Stella Maxwell"></iframe>
-            </div>
-            <div class="episodes-preview js-preview">
-              <div class="episodes-preview-video w-embed"><video class="episodes-preview-video" playsinline="" loop=""
-                  muted="" preload="none">
-                  <source
-                    src="https://player.vimeo.com/progressive_redirect/playback/1056121623/rendition/720p/file.mp4?loc=external&amp;log_user=0&amp;signature=f2412dd6cb0c12465a5a84d8379672ef2754b84b3526f70cd026761ea9c17939&amp;user_id=18829759"
-                    type="video/mp4">
-                </video></div>
-              <div class="overlay"></div>
-              <div class="icon-play">
-                <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
-                    <path fill="#fff" d="m25.057 17.58-11.932 6.888V10.691l11.932 6.888Z"></path>
-                  </svg></div>
-                <div class="icon-background"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div role="group" class="episodes-slide swiper-slide w-dyn-item" aria-label="9 / 10" data-swiper-slide-index="8"
-          style="margin-right: 40px;">
-          <div class="episodes-player">
-            <div data-youtube-id="" data-vimeo-id="1035687463" class="episodes-video js-video w-embed"
-              data-vimeo-initialized="true">
-              <div class="video-screen js-video">
-                <div class="video-overlay js-overlay"></div>
-              </div>
-              <div class="video-controls js-controls">
-                <button class="play-btn js-play">
-                  <svg class="ico-play" width="16" height="20" viewBox="0 0 16 20" fill="none">
-                    <path d="M15 10 .5 19V1L15 10Z" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-pause" width="10" height="15" viewBox="0 0 10 15" fill="none">
-                    <path d="M1 14.5V0m8 14.5V0" stroke="#fff"></path>
-                  </svg>
-                </button>
-                <button class="sound-btn js-sound">
-                  <svg class="ico-sound ico-mute" width="23" height="19" viewBox="0 0 23 19" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path class="ico-sound-0" d="M14 18L7.25926 13.2353H1V9V5.23529H7.25926L14 1V9V18Z" stroke="#fff">
-                    </path>
-                    <path class="ico-sound-50"
-                      d="M17 5C18.203 6.17009 18.9647 7.90305 18.9647 9.83696C18.9647 11.7709 18.203 13.5038 17 14.6739"
-                      stroke="#fff"></path>
-                    <path class="ico-sound-100"
-                      d="M18 2C20.406 3.85471 21.9294 6.60162 21.9294 9.66707C21.9294 12.7325 20.406 15.4794 18 17.3341"
-                      stroke="#fff"></path>
-                  </svg>
-                </button>
-                <div class="volume-settings js-volume-settings">
-                  <input type="range" class="volume-slider js-volume-slider" min="0" max="1" step="0.01" value="0.5">
-                </div>
-                <div class="timeline js-timeline">
-                  <div class="timeline-progress js-timeline-prog"></div>
-                </div>
-                <button class="fullscreen-btn js-fullscreen">
-                  <svg class="ico-fullscreen" width="20" height="16" viewBox="0 0 20 16" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 10v5.5h6.5M19 10v5.5h-6.5M1 6.5V1h6.5M19 6.5V1h-6.5" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-resize" width="18" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.5 18.5V12H0" stroke="#fff"></path>
-                    <path d="M11.5 18.5V12H18" stroke="#fff"></path>
-                    <path d="M6.5 0v6.5H0" stroke="#fff"></path>
-                    <path d="M11.5 0v6.5H18" stroke="#fff"></path>
-                  </svg>
-                </button>
-              </div><iframe src="https://player.vimeo.com/video/1035687463?app_id=122963" width="426" height="240"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                title="Moschino x SIMS ft Stella Maxwell"></iframe>
-            </div>
-            <div class="episodes-preview js-preview">
-              <div class="episodes-preview-video w-embed"><video class="episodes-preview-video" playsinline="" loop=""
-                  muted="" preload="none">
-                  <source
-                    src="https://player.vimeo.com/progressive_redirect/playback/1056121623/rendition/720p/file.mp4?loc=external&amp;log_user=0&amp;signature=f2412dd6cb0c12465a5a84d8379672ef2754b84b3526f70cd026761ea9c17939&amp;user_id=18829759"
-                    type="video/mp4">
-                </video></div>
-              <div class="overlay"></div>
-              <div class="icon-play">
-                <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
-                    <path fill="#fff" d="m25.057 17.58-11.932 6.888V10.691l11.932 6.888Z"></path>
-                  </svg></div>
-                <div class="icon-background"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div role="group" class="episodes-slide swiper-slide w-dyn-item swiper-slide-prev" aria-label="10 / 10"
-          data-swiper-slide-index="9" style="margin-right: 40px;">
-          <div class="episodes-player">
-            <div data-youtube-id="" data-vimeo-id="1035687463" class="episodes-video js-video w-embed"
-              data-vimeo-initialized="true">
-              <div class="video-screen js-video">
-                <div class="video-overlay js-overlay"></div>
-              </div>
-              <div class="video-controls js-controls">
-                <button class="play-btn js-play">
-                  <svg class="ico-play" width="16" height="20" viewBox="0 0 16 20" fill="none">
-                    <path d="M15 10 .5 19V1L15 10Z" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-pause" width="10" height="15" viewBox="0 0 10 15" fill="none">
-                    <path d="M1 14.5V0m8 14.5V0" stroke="#fff"></path>
-                  </svg>
-                </button>
-                <button class="sound-btn js-sound">
-                  <svg class="ico-sound ico-mute" width="23" height="19" viewBox="0 0 23 19" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path class="ico-sound-0" d="M14 18L7.25926 13.2353H1V9V5.23529H7.25926L14 1V9V18Z" stroke="#fff">
-                    </path>
-                    <path class="ico-sound-50"
-                      d="M17 5C18.203 6.17009 18.9647 7.90305 18.9647 9.83696C18.9647 11.7709 18.203 13.5038 17 14.6739"
-                      stroke="#fff"></path>
-                    <path class="ico-sound-100"
-                      d="M18 2C20.406 3.85471 21.9294 6.60162 21.9294 9.66707C21.9294 12.7325 20.406 15.4794 18 17.3341"
-                      stroke="#fff"></path>
-                  </svg>
-                </button>
-                <div class="volume-settings js-volume-settings">
-                  <input type="range" class="volume-slider js-volume-slider" min="0" max="1" step="0.01" value="0.5">
-                </div>
-                <div class="timeline js-timeline">
-                  <div class="timeline-progress js-timeline-prog"></div>
-                </div>
-                <button class="fullscreen-btn js-fullscreen">
-                  <svg class="ico-fullscreen" width="20" height="16" viewBox="0 0 20 16" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 10v5.5h6.5M19 10v5.5h-6.5M1 6.5V1h6.5M19 6.5V1h-6.5" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-resize" width="18" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.5 18.5V12H0" stroke="#fff"></path>
-                    <path d="M11.5 18.5V12H18" stroke="#fff"></path>
-                    <path d="M6.5 0v6.5H0" stroke="#fff"></path>
-                    <path d="M11.5 0v6.5H18" stroke="#fff"></path>
-                  </svg>
-                </button>
-              </div><iframe src="https://player.vimeo.com/video/1035687463?app_id=122963" width="426" height="240"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                title="Moschino x SIMS ft Stella Maxwell"></iframe>
-            </div>
-            <div class="episodes-preview js-preview">
-              <div class="episodes-preview-video w-embed"><video class="episodes-preview-video" playsinline="" loop=""
-                  muted="" preload="none">
-                  <source
-                    src="https://player.vimeo.com/progressive_redirect/playback/1056121623/rendition/720p/file.mp4?loc=external&amp;log_user=0&amp;signature=f2412dd6cb0c12465a5a84d8379672ef2754b84b3526f70cd026761ea9c17939&amp;user_id=18829759"
-                    type="video/mp4">
-                </video></div>
-              <div class="overlay"></div>
-              <div class="icon-play">
-                <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
-                    <path fill="#fff" d="m25.057 17.58-11.932 6.888V10.691l11.932 6.888Z"></path>
-                  </svg></div>
-                <div class="icon-background"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div role="group" class="episodes-slide swiper-slide w-dyn-item swiper-slide-active" aria-label="1 / 10"
-          data-swiper-slide-index="0" style="margin-right: 40px;">
-          <div class="episodes-player">
-            <div data-youtube-id="" data-vimeo-id="1035687463" class="episodes-video js-video w-embed"
-              data-vimeo-initialized="true">
-              <div class="video-screen js-video">
-                <div class="video-overlay js-overlay"></div>
-              </div>
-              <div class="video-controls js-controls">
-                <button class="play-btn js-play">
-                  <svg class="ico-play" width="16" height="20" viewBox="0 0 16 20" fill="none">
-                    <path d="M15 10 .5 19V1L15 10Z" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-pause" width="10" height="15" viewBox="0 0 10 15" fill="none">
-                    <path d="M1 14.5V0m8 14.5V0" stroke="#fff"></path>
-                  </svg>
-                </button>
-                <button class="sound-btn js-sound">
-                  <svg class="ico-sound ico-mute" width="23" height="19" viewBox="0 0 23 19" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path class="ico-sound-0" d="M14 18L7.25926 13.2353H1V9V5.23529H7.25926L14 1V9V18Z" stroke="#fff">
-                    </path>
-                    <path class="ico-sound-50"
-                      d="M17 5C18.203 6.17009 18.9647 7.90305 18.9647 9.83696C18.9647 11.7709 18.203 13.5038 17 14.6739"
-                      stroke="#fff"></path>
-                    <path class="ico-sound-100"
-                      d="M18 2C20.406 3.85471 21.9294 6.60162 21.9294 9.66707C21.9294 12.7325 20.406 15.4794 18 17.3341"
-                      stroke="#fff"></path>
-                  </svg>
-                </button>
-                <div class="volume-settings js-volume-settings">
-                  <input type="range" class="volume-slider js-volume-slider" min="0" max="1" step="0.01" value="0.5">
-                </div>
-                <div class="timeline js-timeline">
-                  <div class="timeline-progress js-timeline-prog"></div>
-                </div>
-                <button class="fullscreen-btn js-fullscreen">
-                  <svg class="ico-fullscreen" width="20" height="16" viewBox="0 0 20 16" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 10v5.5h6.5M19 10v5.5h-6.5M1 6.5V1h6.5M19 6.5V1h-6.5" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-resize" width="18" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.5 18.5V12H0" stroke="#fff"></path>
-                    <path d="M11.5 18.5V12H18" stroke="#fff"></path>
-                    <path d="M6.5 0v6.5H0" stroke="#fff"></path>
-                    <path d="M11.5 0v6.5H18" stroke="#fff"></path>
-                  </svg>
-                </button>
-              </div><iframe src="https://player.vimeo.com/video/1035687463?app_id=122963" width="426" height="240"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                title="Moschino x SIMS ft Stella Maxwell"></iframe>
-            </div>
-            <div class="episodes-preview js-preview">
-              <div class="episodes-preview-video w-embed"><video class="episodes-preview-video" playsinline="" loop=""
-                  muted="" preload="none">
-                  <source
-                    src="https://player.vimeo.com/progressive_redirect/playback/1060460510/rendition/240p/file.mp4?loc=external&amp;log_user=0&amp;signature=0bf537a6cf62c7e56df71c73a5f25135e6fa8d6ff26b83d0a4365bbc78d69cd3&amp;user_id=18829759"
-                    type="video/mp4">
-                </video></div>
-              <div class="overlay"></div>
-              <div class="icon-play">
-                <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
-                    <path fill="#fff" d="m25.057 17.58-11.932 6.888V10.691l11.932 6.888Z"></path>
-                  </svg></div>
-                <div class="icon-background"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div role="group" class="episodes-slide swiper-slide w-dyn-item swiper-slide-next" aria-label="2 / 10"
-          data-swiper-slide-index="1" style="margin-right: 40px;">
-          <div class="episodes-player">
-            <div data-youtube-id="BNjjanGwPVo" data-vimeo-id="" class="episodes-video js-video w-embed">
-              <div class="video-screen js-video">
-                <div class="video-overlay js-overlay"></div>
-              </div>
-              <div class="video-controls js-controls">
-                <button class="play-btn js-play">
-                  <svg class="ico-play" width="16" height="20" viewBox="0 0 16 20" fill="none">
-                    <path d="M15 10 .5 19V1L15 10Z" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-pause" width="10" height="15" viewBox="0 0 10 15" fill="none">
-                    <path d="M1 14.5V0m8 14.5V0" stroke="#fff"></path>
-                  </svg>
-                </button>
-                <button class="sound-btn js-sound">
-                  <svg class="ico-sound ico-mute" width="23" height="19" viewBox="0 0 23 19" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path class="ico-sound-0" d="M14 18L7.25926 13.2353H1V9V5.23529H7.25926L14 1V9V18Z" stroke="#fff">
-                    </path>
-                    <path class="ico-sound-50"
-                      d="M17 5C18.203 6.17009 18.9647 7.90305 18.9647 9.83696C18.9647 11.7709 18.203 13.5038 17 14.6739"
-                      stroke="#fff"></path>
-                    <path class="ico-sound-100"
-                      d="M18 2C20.406 3.85471 21.9294 6.60162 21.9294 9.66707C21.9294 12.7325 20.406 15.4794 18 17.3341"
-                      stroke="#fff"></path>
-                  </svg>
-                </button>
-                <div class="volume-settings js-volume-settings">
-                  <input type="range" class="volume-slider js-volume-slider" min="0" max="1" step="0.01" value="0.5">
-                </div>
-                <div class="timeline js-timeline">
-                  <div class="timeline-progress js-timeline-prog"></div>
-                </div>
-                <button class="fullscreen-btn js-fullscreen">
-                  <svg class="ico-fullscreen" width="20" height="16" viewBox="0 0 20 16" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 10v5.5h6.5M19 10v5.5h-6.5M1 6.5V1h6.5M19 6.5V1h-6.5" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-resize" width="18" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.5 18.5V12H0" stroke="#fff"></path>
-                    <path d="M11.5 18.5V12H18" stroke="#fff"></path>
-                    <path d="M6.5 0v6.5H0" stroke="#fff"></path>
-                    <path d="M11.5 0v6.5H18" stroke="#fff"></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="episodes-preview js-preview">
-              <div class="episodes-preview-video w-embed"><video class="episodes-preview-video" playsinline="" loop=""
-                  muted="" preload="none">
-                  <source
-                    src="https://player.vimeo.com/progressive_redirect/playback/1060460498/rendition/240p/file.mp4?loc=external&amp;log_user=0&amp;signature=14e01774f8a4cf4394a8e62e7e624a26ab2672a57b64b79dc5882c692c465a81&amp;user_id=18829759"
-                    type="video/mp4">
-                </video></div>
-              <div class="overlay"></div>
-              <div class="icon-play">
-                <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
-                    <path fill="#fff" d="m25.057 17.58-11.932 6.888V10.691l11.932 6.888Z"></path>
-                  </svg></div>
-                <div class="icon-background"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div role="group" class="episodes-slide swiper-slide w-dyn-item" aria-label="3 / 10" data-swiper-slide-index="2"
-          style="margin-right: 40px;">
-          <div class="episodes-player">
-            <div data-youtube-id="" data-vimeo-id="1035687463" class="episodes-video js-video w-embed"
-              data-vimeo-initialized="true">
-              <div class="video-screen js-video">
-                <div class="video-overlay js-overlay"></div>
-              </div>
-              <div class="video-controls js-controls">
-                <button class="play-btn js-play">
-                  <svg class="ico-play" width="16" height="20" viewBox="0 0 16 20" fill="none">
-                    <path d="M15 10 .5 19V1L15 10Z" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-pause" width="10" height="15" viewBox="0 0 10 15" fill="none">
-                    <path d="M1 14.5V0m8 14.5V0" stroke="#fff"></path>
-                  </svg>
-                </button>
-                <button class="sound-btn js-sound">
-                  <svg class="ico-sound ico-mute" width="23" height="19" viewBox="0 0 23 19" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path class="ico-sound-0" d="M14 18L7.25926 13.2353H1V9V5.23529H7.25926L14 1V9V18Z" stroke="#fff">
-                    </path>
-                    <path class="ico-sound-50"
-                      d="M17 5C18.203 6.17009 18.9647 7.90305 18.9647 9.83696C18.9647 11.7709 18.203 13.5038 17 14.6739"
-                      stroke="#fff"></path>
-                    <path class="ico-sound-100"
-                      d="M18 2C20.406 3.85471 21.9294 6.60162 21.9294 9.66707C21.9294 12.7325 20.406 15.4794 18 17.3341"
-                      stroke="#fff"></path>
-                  </svg>
-                </button>
-                <div class="volume-settings js-volume-settings">
-                  <input type="range" class="volume-slider js-volume-slider" min="0" max="1" step="0.01" value="0.5">
-                </div>
-                <div class="timeline js-timeline">
-                  <div class="timeline-progress js-timeline-prog"></div>
-                </div>
-                <button class="fullscreen-btn js-fullscreen">
-                  <svg class="ico-fullscreen" width="20" height="16" viewBox="0 0 20 16" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 10v5.5h6.5M19 10v5.5h-6.5M1 6.5V1h6.5M19 6.5V1h-6.5" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-resize" width="18" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.5 18.5V12H0" stroke="#fff"></path>
-                    <path d="M11.5 18.5V12H18" stroke="#fff"></path>
-                    <path d="M6.5 0v6.5H0" stroke="#fff"></path>
-                    <path d="M11.5 0v6.5H18" stroke="#fff"></path>
-                  </svg>
-                </button>
-              </div><iframe src="https://player.vimeo.com/video/1035687463?app_id=122963" width="426" height="240"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                title="Moschino x SIMS ft Stella Maxwell"></iframe>
-            </div>
-            <div class="episodes-preview js-preview">
-              <div class="episodes-preview-video w-embed"><video class="episodes-preview-video" playsinline="" loop=""
-                  muted="" preload="none">
-                  <source
-                    src="https://player.vimeo.com/progressive_redirect/playback/1056121623/rendition/720p/file.mp4?loc=external&amp;log_user=0&amp;signature=f2412dd6cb0c12465a5a84d8379672ef2754b84b3526f70cd026761ea9c17939&amp;user_id=18829759"
-                    type="video/mp4">
-                </video></div>
-              <div class="overlay"></div>
-              <div class="icon-play">
-                <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
-                    <path fill="#fff" d="m25.057 17.58-11.932 6.888V10.691l11.932 6.888Z"></path>
-                  </svg></div>
-                <div class="icon-background"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div role="group" class="episodes-slide swiper-slide w-dyn-item" aria-label="4 / 10" data-swiper-slide-index="3"
-          style="margin-right: 40px;">
-          <div class="episodes-player">
-            <div data-youtube-id="" data-vimeo-id="1035687463" class="episodes-video js-video w-embed"
-              data-vimeo-initialized="true">
-              <div class="video-screen js-video">
-                <div class="video-overlay js-overlay"></div>
-              </div>
-              <div class="video-controls js-controls">
-                <button class="play-btn js-play">
-                  <svg class="ico-play" width="16" height="20" viewBox="0 0 16 20" fill="none">
-                    <path d="M15 10 .5 19V1L15 10Z" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-pause" width="10" height="15" viewBox="0 0 10 15" fill="none">
-                    <path d="M1 14.5V0m8 14.5V0" stroke="#fff"></path>
-                  </svg>
-                </button>
-                <button class="sound-btn js-sound">
-                  <svg class="ico-sound ico-mute" width="23" height="19" viewBox="0 0 23 19" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path class="ico-sound-0" d="M14 18L7.25926 13.2353H1V9V5.23529H7.25926L14 1V9V18Z" stroke="#fff">
-                    </path>
-                    <path class="ico-sound-50"
-                      d="M17 5C18.203 6.17009 18.9647 7.90305 18.9647 9.83696C18.9647 11.7709 18.203 13.5038 17 14.6739"
-                      stroke="#fff"></path>
-                    <path class="ico-sound-100"
-                      d="M18 2C20.406 3.85471 21.9294 6.60162 21.9294 9.66707C21.9294 12.7325 20.406 15.4794 18 17.3341"
-                      stroke="#fff"></path>
-                  </svg>
-                </button>
-                <div class="volume-settings js-volume-settings">
-                  <input type="range" class="volume-slider js-volume-slider" min="0" max="1" step="0.01" value="0.5">
-                </div>
-                <div class="timeline js-timeline">
-                  <div class="timeline-progress js-timeline-prog"></div>
-                </div>
-                <button class="fullscreen-btn js-fullscreen">
-                  <svg class="ico-fullscreen" width="20" height="16" viewBox="0 0 20 16" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 10v5.5h6.5M19 10v5.5h-6.5M1 6.5V1h6.5M19 6.5V1h-6.5" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-resize" width="18" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.5 18.5V12H0" stroke="#fff"></path>
-                    <path d="M11.5 18.5V12H18" stroke="#fff"></path>
-                    <path d="M6.5 0v6.5H0" stroke="#fff"></path>
-                    <path d="M11.5 0v6.5H18" stroke="#fff"></path>
-                  </svg>
-                </button>
-              </div><iframe src="https://player.vimeo.com/video/1035687463?app_id=122963" width="426" height="240"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                title="Moschino x SIMS ft Stella Maxwell"></iframe>
-            </div>
-            <div class="episodes-preview js-preview">
-              <div class="episodes-preview-video w-embed"><video class="episodes-preview-video" playsinline="" loop=""
-                  muted="" preload="none">
-                  <source
-                    src="https://player.vimeo.com/progressive_redirect/playback/1056121623/rendition/720p/file.mp4?loc=external&amp;log_user=0&amp;signature=f2412dd6cb0c12465a5a84d8379672ef2754b84b3526f70cd026761ea9c17939&amp;user_id=18829759"
-                    type="video/mp4">
-                </video></div>
-              <div class="overlay"></div>
-              <div class="icon-play">
-                <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
-                    <path fill="#fff" d="m25.057 17.58-11.932 6.888V10.691l11.932 6.888Z"></path>
-                  </svg></div>
-                <div class="icon-background"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div role="group" class="episodes-slide swiper-slide w-dyn-item" aria-label="5 / 10" data-swiper-slide-index="4"
-          style="margin-right: 40px;">
-          <div class="episodes-player">
-            <div data-youtube-id="" data-vimeo-id="1035687463" class="episodes-video js-video w-embed"
-              data-vimeo-initialized="true">
-              <div class="video-screen js-video">
-                <div class="video-overlay js-overlay"></div>
-              </div>
-              <div class="video-controls js-controls">
-                <button class="play-btn js-play">
-                  <svg class="ico-play" width="16" height="20" viewBox="0 0 16 20" fill="none">
-                    <path d="M15 10 .5 19V1L15 10Z" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-pause" width="10" height="15" viewBox="0 0 10 15" fill="none">
-                    <path d="M1 14.5V0m8 14.5V0" stroke="#fff"></path>
-                  </svg>
-                </button>
-                <button class="sound-btn js-sound">
-                  <svg class="ico-sound ico-mute" width="23" height="19" viewBox="0 0 23 19" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path class="ico-sound-0" d="M14 18L7.25926 13.2353H1V9V5.23529H7.25926L14 1V9V18Z" stroke="#fff">
-                    </path>
-                    <path class="ico-sound-50"
-                      d="M17 5C18.203 6.17009 18.9647 7.90305 18.9647 9.83696C18.9647 11.7709 18.203 13.5038 17 14.6739"
-                      stroke="#fff"></path>
-                    <path class="ico-sound-100"
-                      d="M18 2C20.406 3.85471 21.9294 6.60162 21.9294 9.66707C21.9294 12.7325 20.406 15.4794 18 17.3341"
-                      stroke="#fff"></path>
-                  </svg>
-                </button>
-                <div class="volume-settings js-volume-settings">
-                  <input type="range" class="volume-slider js-volume-slider" min="0" max="1" step="0.01" value="0.5">
-                </div>
-                <div class="timeline js-timeline">
-                  <div class="timeline-progress js-timeline-prog"></div>
-                </div>
-                <button class="fullscreen-btn js-fullscreen">
-                  <svg class="ico-fullscreen" width="20" height="16" viewBox="0 0 20 16" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 10v5.5h6.5M19 10v5.5h-6.5M1 6.5V1h6.5M19 6.5V1h-6.5" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-resize" width="18" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.5 18.5V12H0" stroke="#fff"></path>
-                    <path d="M11.5 18.5V12H18" stroke="#fff"></path>
-                    <path d="M6.5 0v6.5H0" stroke="#fff"></path>
-                    <path d="M11.5 0v6.5H18" stroke="#fff"></path>
-                  </svg>
-                </button>
-              </div><iframe src="https://player.vimeo.com/video/1035687463?app_id=122963" width="426" height="240"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                title="Moschino x SIMS ft Stella Maxwell"></iframe>
-            </div>
-            <div class="episodes-preview js-preview">
-              <div class="episodes-preview-video w-embed"><video class="episodes-preview-video" playsinline="" loop=""
-                  muted="" preload="none">
-                  <source
-                    src="https://player.vimeo.com/progressive_redirect/playback/1056121623/rendition/720p/file.mp4?loc=external&amp;log_user=0&amp;signature=f2412dd6cb0c12465a5a84d8379672ef2754b84b3526f70cd026761ea9c17939&amp;user_id=18829759"
-                    type="video/mp4">
-                </video></div>
-              <div class="overlay"></div>
-              <div class="icon-play">
-                <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
-                    <path fill="#fff" d="m25.057 17.58-11.932 6.888V10.691l11.932 6.888Z"></path>
-                  </svg></div>
-                <div class="icon-background"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div role="group" class="episodes-slide swiper-slide w-dyn-item" aria-label="6 / 10" data-swiper-slide-index="5"
-          style="margin-right: 40px;">
-          <div class="episodes-player">
-            <div data-youtube-id="" data-vimeo-id="1035687463" class="episodes-video js-video w-embed"
-              data-vimeo-initialized="true">
-              <div class="video-screen js-video">
-                <div class="video-overlay js-overlay"></div>
-              </div>
-              <div class="video-controls js-controls">
-                <button class="play-btn js-play">
-                  <svg class="ico-play" width="16" height="20" viewBox="0 0 16 20" fill="none">
-                    <path d="M15 10 .5 19V1L15 10Z" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-pause" width="10" height="15" viewBox="0 0 10 15" fill="none">
-                    <path d="M1 14.5V0m8 14.5V0" stroke="#fff"></path>
-                  </svg>
-                </button>
-                <button class="sound-btn js-sound">
-                  <svg class="ico-sound ico-mute" width="23" height="19" viewBox="0 0 23 19" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path class="ico-sound-0" d="M14 18L7.25926 13.2353H1V9V5.23529H7.25926L14 1V9V18Z" stroke="#fff">
-                    </path>
-                    <path class="ico-sound-50"
-                      d="M17 5C18.203 6.17009 18.9647 7.90305 18.9647 9.83696C18.9647 11.7709 18.203 13.5038 17 14.6739"
-                      stroke="#fff"></path>
-                    <path class="ico-sound-100"
-                      d="M18 2C20.406 3.85471 21.9294 6.60162 21.9294 9.66707C21.9294 12.7325 20.406 15.4794 18 17.3341"
-                      stroke="#fff"></path>
-                  </svg>
-                </button>
-                <div class="volume-settings js-volume-settings">
-                  <input type="range" class="volume-slider js-volume-slider" min="0" max="1" step="0.01" value="0.5">
-                </div>
-                <div class="timeline js-timeline">
-                  <div class="timeline-progress js-timeline-prog"></div>
-                </div>
-                <button class="fullscreen-btn js-fullscreen">
-                  <svg class="ico-fullscreen" width="20" height="16" viewBox="0 0 20 16" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 10v5.5h6.5M19 10v5.5h-6.5M1 6.5V1h6.5M19 6.5V1h-6.5" stroke="#fff"></path>
-                  </svg>
-                  <svg class="ico-resize" width="18" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.5 18.5V12H0" stroke="#fff"></path>
-                    <path d="M11.5 18.5V12H18" stroke="#fff"></path>
-                    <path d="M6.5 0v6.5H0" stroke="#fff"></path>
-                    <path d="M11.5 0v6.5H18" stroke="#fff"></path>
-                  </svg>
-                </button>
-              </div><iframe src="https://player.vimeo.com/video/1035687463?app_id=122963" width="426" height="240"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                title="Moschino x SIMS ft Stella Maxwell"></iframe>
-            </div>
-            <div class="episodes-preview js-preview">
-              <div class="episodes-preview-video w-embed"><video class="episodes-preview-video" playsinline="" loop=""
-                  muted="" preload="none">
-                  <source
-                    src="https://player.vimeo.com/progressive_redirect/playback/1056121623/rendition/720p/file.mp4?loc=external&amp;log_user=0&amp;signature=f2412dd6cb0c12465a5a84d8379672ef2754b84b3526f70cd026761ea9c17939&amp;user_id=18829759"
-                    type="video/mp4">
-                </video></div>
-              <div class="overlay"></div>
-              <div class="icon-play">
-                <div class="button-svg w-embed"><svg fill="none" viewBox="0 0 35 35">
-                    <path fill="#fff" d="m25.057 17.58-11.932 6.888V10.691l11.932 6.888Z"></path>
-                  </svg></div>
-                <div class="icon-background"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    <div class="episodes-swiper swiper js-episodes-swiper w-dyn-list">
+      <div class="w-dyn-empty"></div>
     </div>
   </section>
-  <section style="background-color:#c71435" class="fundraiser">
+  <section class="fundraiser w-condition-invisible">
     <div class="w-layout-blockcontainer container w-container">
       <div class="fundraiser-wrapper">
         <div class="fundraiser-headline">
-          <h3 class="h3">Discover More</h3>
-          <p class="p1">Short text about crowdfunding for the project through kickstarter.</p>
-        </div><a href="https://google.com" target="_blank"
-          class="button button-primary fundraiser-button w-inline-block">
+          <h3 class="h3 w-dyn-bind-empty"></h3>
+          <p class="p1 w-dyn-bind-empty"></p>
+        </div><a href="#" class="button button-primary fundraiser-button w-inline-block">
           <div class="button-text">Support Now</div>
         </a>
         <div class="fundraiser-data">
           <div class="fundraiser-data-group">
             <div class="fundraiser-data-item">
               <div class="label fundraiser-data-label">Goal<br></div>
-              <div class="h3">$50,000</div>
+              <div class="h3 w-dyn-bind-empty"></div>
             </div>
             <div class="fundraiser-data-item">
               <div class="label fundraiser-data-label">Fundraised<br></div>
-              <div class="h3">$130,462</div>
+              <div class="h3 w-dyn-bind-empty"></div>
             </div>
             <div class="fundraiser-data-item">
               <div class="label fundraiser-data-label">Contributors<br></div>
-              <div class="h3">23</div>
+              <div class="h3 w-dyn-bind-empty"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="fundraiser-overlay"></div><img
-      src="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67adfa1739259f29f14c867f_background.jpg"
-      loading="lazy" alt="" sizes="100vw"
-      srcset="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67adfa1739259f29f14c867f_background-p-500.jpg 500w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67adfa1739259f29f14c867f_background-p-800.jpg 800w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67adfa1739259f29f14c867f_background-p-1080.jpg 1080w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67adfa1739259f29f14c867f_background.jpg 1440w"
-      class="fundraiser-background-image desktop-tablet-only"><img
-      src="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67b382960085451c1967d2f1_Donate.jpg"
-      loading="lazy" alt="" class="fundraiser-background-image mobile-only">
+      src="https://cdn.prod.website-files.com/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt=""
+      class="fundraiser-background-image desktop-tablet-only w-condition-invisible w-dyn-bind-empty"><img
+      src="https://cdn.prod.website-files.com/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt=""
+      class="fundraiser-background-image mobile-only w-condition-invisible w-dyn-bind-empty">
   </section>
   <section class="media-highlight">
     <div class="media-featured media-highlight-item"><img
-        src="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c34c13a912165e6ed99354_SH%20-%20FEATURED%20MEDIA%20IMAGE%204.webp"
-        loading="lazy" alt="" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, 50vw"
-        srcset="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c34c13a912165e6ed99354_SH%20-%20FEATURED%20MEDIA%20IMAGE%204-p-500.webp 500w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c34c13a912165e6ed99354_SH%20-%20FEATURED%20MEDIA%20IMAGE%204-p-800.webp 800w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c34c13a912165e6ed99354_SH%20-%20FEATURED%20MEDIA%20IMAGE%204-p-1080.webp 1080w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c34c13a912165e6ed99354_SH%20-%20FEATURED%20MEDIA%20IMAGE%204.webp 1520w"
+        src="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c7128a9f6e3901af78c5be_SH%20-%20FEATURED%20MEDIA%204%20IMAGE.webp"
+        loading="lazy" alt="" sizes="100vw"
+        srcset="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c7128a9f6e3901af78c5be_SH%20-%20FEATURED%20MEDIA%204%20IMAGE-p-500.webp 500w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c7128a9f6e3901af78c5be_SH%20-%20FEATURED%20MEDIA%204%20IMAGE-p-800.webp 800w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c7128a9f6e3901af78c5be_SH%20-%20FEATURED%20MEDIA%204%20IMAGE-p-1080.webp 1080w, https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c7128a9f6e3901af78c5be_SH%20-%20FEATURED%20MEDIA%204%20IMAGE.webp 1440w"
         class="media-featured-image">
       <div class="media-featured-video w-condition-invisible w-embed"><video class="media-featured-video" autoplay=""
           playsinline="" loop="" muted="" preload="auto">
@@ -1643,10 +411,28 @@
           <div class="p1 o50 credits-label">Cast</div>
           <div class="p1 credits-list w-richtext">
             <ul role="list">
-              <li><strong><em>Brit Phelan</em></strong><em> </em><em>Catherine/Brit</em></li>
-              <li><strong><em>Catherine Bergin </em></strong><em>Mom</em></li>
-              <li><strong><em>Fausta Phelan</em></strong><em> </em><em>Brit/Catherine</em></li>
-              <li><strong><em>Lexi Kirsch</em></strong><em> </em><em>AD</em></li>
+              <li><strong><em>Brit Phelan </em></strong><em>Brit</em></li>
+              <li><strong><em>Heather Hardy </em></strong><em>Heather</em></li>
+              <li><strong><em>Julianna Kurokawa </em></strong><em>Em</em></li>
+              <li><strong><em>Ruby Mainieri </em></strong><em>Zoe</em></li>
+              <li><strong><em>Howard Hendrix Powell </em></strong><em>Jamie</em></li>
+              <li><strong><em>Antino Crowley-Kamenwati </em></strong><em>Clapton</em></li>
+              <li><strong><em>Adrianna David </em></strong><em>Clarice</em></li>
+              <li><strong><em>Delen Parsley </em></strong><em>Blimp</em></li>
+              <li><strong><em>Grant Cleveland </em></strong><em>Officer #1</em></li>
+              <li><strong><em>Joe Harrington</em></strong><em> Officer #2</em></li>
+              <li><strong><em>Nadia Saraf </em></strong><em>Wife</em></li>
+              <li><strong><em>Terry Serpico </em></strong><em>Husband</em></li>
+              <li><strong><em>Stefen D’Angelica </em></strong><em>Hipster Guy</em></li>
+              <li><strong><em>Jimmy Mamrol</em></strong><em> Gay Boy</em></li>
+              <li><strong><em>Noa Leah </em></strong><em>Teenager</em></li>
+              <li><strong><em>Herbert Birman </em></strong><em>Construction Guy</em></li>
+              <li><strong><em>Justin Tejada</em></strong><em> Tall Guy</em></li>
+              <li><strong><em>Stella Jiler </em></strong><em>Skater #1</em></li>
+              <li><strong><em>Lilac Guaragna </em></strong><em>Skater #2</em></li>
+              <li><strong><em>Jessyka Bailey </em></strong><em>Skater #3</em></li>
+              <li><strong><em>Drew Oyler </em></strong><em>Skater Extra</em></li>
+              <li><strong><em>Tristan Miller</em></strong><em> Wimpyy Kid</em></li>
             </ul>
           </div>
         </div>
@@ -1654,10 +440,27 @@
           <div class="p1 o50 credits-label">Crew</div>
           <div class="p1 credits-list w-richtext">
             <ul role="list">
-              <li><strong><em>Brit Phelan</em></strong><em> </em><em>Producer</em></li>
-              <li><strong><em>Madeleine Moy </em></strong><em>Production Designer</em></li>
-              <li><strong><em>Carolina Pedroza</em></strong><em> </em><em>Art Director</em></li>
-              <li><strong><em>Brent Mason</em></strong><em> </em><em>Construction Coordinator</em></li>
+              <li><strong><em>Brit Phelan</em></strong><em> Producer</em></li>
+              <li><strong><em>Hannah Schalle</em></strong><em>s Creative Director</em></li>
+              <li><strong><em>Nick Rossi </em></strong><em>AD</em></li>
+              <li><strong><em>AJ Baldwin </em></strong><em>2nd AD</em></li>
+              <li><strong><em>Kelsey Smith</em></strong><em> DP</em></li>
+              <li><strong><em>Joshua Pei </em></strong><em>2nd Unit DP</em></li>
+              <li><strong><em>Tim Caviar </em></strong><em>Gaffer</em></li>
+              <li><strong><em>Scott Giameo </em></strong><em>Grip</em></li>
+              <li><strong><em>Julia McGill </em></strong><em>Sound</em></li>
+              <li><strong><em>Grace Scott </em></strong><em>Sound</em></li>
+              <li><strong><em>Ben Carolan </em></strong><em>1st AC</em></li>
+              <li><strong><em>Rick Elders </em></strong><em>1st AC</em></li>
+              <li><strong><em>Kimmy Komrska </em></strong><em>2nd AC</em></li>
+              <li><strong><em>Charles Haskins </em></strong><em>Stunt Coordinator</em></li>
+              <li><strong><em>Danielle Waugh</em></strong><em> Key HMU Artist</em></li>
+              <li><strong><em>Blythe Irish </em></strong><em>HMU Artist</em></li>
+              <li><strong><em>Nina Carelli </em></strong><em>SFX</em></li>
+              <li><strong><em>Shannon Young </em></strong><em>HMU Assistant</em></li>
+              <li><strong><em>Julie Dondena </em></strong><em>Costume Designer #1</em></li>
+              <li><strong><em>Olive Honan </em></strong><em>Costume Designer #2</em></li>
+              <li><strong><em>Jacob Swartz </em></strong><em>PAs</em></li>
             </ul>
           </div>
         </div>
@@ -1665,16 +468,15 @@
           <div class="p1 o50 credits-label">Post-Production</div>
           <div class="p1 credits-list w-richtext">
             <ul role="list">
-              <li><strong><em>Brit Phelan </em></strong><em>Editor</em></li>
-              <li><strong><em>Marius Bontet </em></strong><em>Illustrator/Animator</em></li>
-              <li><strong><em>Lucas Guerois </em></strong><em>Motion Graphics</em></li>
-              <li><strong><em>Kevin Woo </em></strong><em>Composting</em></li>
+              <li><strong><em>Dustin Fine </em></strong><em>Trailer Editor</em></li>
+              <li><strong><em>SoYoung Park </em></strong><em>Colorist</em></li>
+              <li><strong><em>Ryan Brooks </em></strong><em>Sound Designer/Mixer</em></li>
             </ul>
           </div>
         </div>
         <div class="credits-item item-6">
           <div class="p1 o50 credits-label">Year</div>
-          <p class="p1 bold">2024</p>
+          <p class="p1 bold">2025</p>
         </div>
       </div>
       <div class="w-embed">
@@ -1698,16 +500,16 @@
   </section>
   <section data-module="discover" class="discover">
     <div class="w-layout-blockcontainer container w-container">
-      <h3 class="h3">Discover More</h3>
+      <h3 class="h3 w-dyn-bind-empty"></h3>
       <div class="featured-projects swiper js-featured-projects-swiper w-dyn-list">
         <div role="list" class="featured-projects-list swiper-wrapper w-dyn-items">
           <div role="listitem" class="featured-projects-item swiper-slide w-dyn-item"><a href="/projects/finding-dad"
               class="project-card w-inline-block">
               <div class="h4 project-card-text">Finding Dad</div><img
                 src="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67b738c0c57d7a3118a8b077_Project%203.webp"
-                loading="lazy" alt="" class="project-card-image">
-              <div class="project-card-video w-condition-invisible w-embed"><video class="project-card-video"
-                  playsinline="" loop="" muted="" preload="none">
+                loading="lazy" alt="" class="project-card-image w-condition-invisible">
+              <div class="project-card-video w-embed"><video class="project-card-video" playsinline="" loop="" muted=""
+                  preload="none">
                   <source
                     src="https://player.vimeo.com/progressive_redirect/playback/1035687627/rendition/540p/file.mp4?loc=external&amp;log_user=0&amp;signature=c82c468caeb9c6e279cfa88191e90bb0e387a8709f82057b3960150ba7415e52&amp;user_id=18829759"
                     type="video/mp4">
@@ -1716,12 +518,12 @@
           <div role="listitem" class="featured-projects-item swiper-slide w-dyn-item"><a
               href="/projects/looking-for-love" class="project-card w-inline-block">
               <div class="h4 project-card-text">Looking For Love</div><img
-                src="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67b738cac57d7a3118a8b961_Project%202.webp"
+                src="https://cdn.prod.website-files.com/679b5af79bb4903de9f59d93/67c71af4d45e4a985eb7093f_LFL%20-%20Project%20Thumbnail.webp"
                 loading="lazy" alt="" class="project-card-image w-condition-invisible">
               <div class="project-card-video w-embed"><video class="project-card-video" playsinline="" loop="" muted=""
                   preload="none">
                   <source
-                    src="https://player.vimeo.com/progressive_redirect/playback/526036644/rendition/540p/file.mp4?loc=external&amp;log_user=0&amp;signature=318ceb3bd76606335d8e5074d0c70d1949740bf529f02c0c87ea0c98a2837897&amp;user_id=18829759"
+                    src="https://player.vimeo.com/progressive_redirect/playback/1062260463/rendition/540p/file.mp4?loc=external&amp;log_user=0&amp;signature=034a4218aea77047a0cfea438d6f170937de9134d1812de2a2f8b1c665053a12&amp;user_id=18829759"
                     type="video/mp4">
                 </video></div>
             </a></div>
@@ -1788,129 +590,13 @@
         </button>
       </div><iframe src="https://player.vimeo.com/video/526003879?app_id=122963" width="426" height="240"
         frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-        title="White Claw - Camp"></iframe>
+        title="White Claw - Camp" data-ready="true"></iframe>
     </div><a href="#" class="modal-close js-modal-close w-inline-block">
       <div class="modal-close-icon w-embed"><svg class="ico-close" width="16" height="16" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path d="m1 .5 14.5 15M1 15.5 15.5.5" stroke="#fff"></path>
         </svg></div>
     </a>
-  </div>
-  <div class="modals-wrapper w-dyn-list">
-    <div role="list" class="modals-list w-dyn-items">
-      <div data-modal-target="finding-dad-trailer-1" role="listitem" class="modal js-modal w-dyn-item">
-        <div data-youtube-id="7rMyHlZbwyw" data-vimeo-id="526003879" class="video-player js-video-player w-embed"
-          data-vimeo-initialized="true">
-          <div class="video-screen js-video">
-            <div class="video-overlay js-overlay"></div>
-          </div>
-          <div class="video-controls js-controls">
-            <button class="play-btn js-play">
-              <svg class="ico-play" width="16" height="20" viewBox="0 0 16 20" fill="none">
-                <path d="M15 10 .5 19V1L15 10Z" stroke="#fff"></path>
-              </svg>
-              <svg class="ico-pause" width="10" height="15" viewBox="0 0 10 15" fill="none">
-                <path d="M1 14.5V0m8 14.5V0" stroke="#fff"></path>
-              </svg>
-            </button>
-            <button class="sound-btn js-sound">
-              <svg class="ico-sound ico-mute" width="23" height="19" viewBox="0 0 23 19" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path class="ico-sound-0" d="M14 18L7.25926 13.2353H1V9V5.23529H7.25926L14 1V9V18Z" stroke="#fff">
-                </path>
-                <path class="ico-sound-50"
-                  d="M17 5C18.203 6.17009 18.9647 7.90305 18.9647 9.83696C18.9647 11.7709 18.203 13.5038 17 14.6739"
-                  stroke="#fff"></path>
-                <path class="ico-sound-100"
-                  d="M18 2C20.406 3.85471 21.9294 6.60162 21.9294 9.66707C21.9294 12.7325 20.406 15.4794 18 17.3341"
-                  stroke="#fff"></path>
-              </svg>
-            </button>
-            <div class="volume-settings js-volume-settings">
-              <input type="range" class="volume-slider js-volume-slider" min="0" max="1" step="0.01" value="0.5">
-            </div>
-            <div class="timeline js-timeline">
-              <div class="timeline-progress js-timeline-prog"></div>
-            </div>
-            <button class="fullscreen-btn js-fullscreen">
-              <svg class="ico-fullscreen" width="20" height="16" viewBox="0 0 20 16" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 10v5.5h6.5M19 10v5.5h-6.5M1 6.5V1h6.5M19 6.5V1h-6.5" stroke="#fff"></path>
-              </svg>
-              <svg class="ico-resize" width="18" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.5 18.5V12H0" stroke="#fff"></path>
-                <path d="M11.5 18.5V12H18" stroke="#fff"></path>
-                <path d="M6.5 0v6.5H0" stroke="#fff"></path>
-                <path d="M11.5 0v6.5H18" stroke="#fff"></path>
-              </svg>
-            </button>
-          </div><iframe src="https://player.vimeo.com/video/526003879?app_id=122963" width="426" height="240"
-            frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-            title="White Claw - Camp"></iframe>
-        </div><a href="#" class="modal-close js-modal-close w-inline-block">
-          <div class="modal-close-icon w-embed"><svg class="ico-close" width="16" height="16" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path d="m1 .5 14.5 15M1 15.5 15.5.5" stroke="#fff"></path>
-            </svg></div>
-        </a>
-      </div>
-      <div data-modal-target="finding-dad-trailer-2" role="listitem" class="modal js-modal w-dyn-item">
-        <div data-youtube-id="" data-vimeo-id="1035687384" class="video-player js-video-player w-embed"
-          data-vimeo-initialized="true">
-          <div class="video-screen js-video">
-            <div class="video-overlay js-overlay"></div>
-          </div>
-          <div class="video-controls js-controls">
-            <button class="play-btn js-play">
-              <svg class="ico-play" width="16" height="20" viewBox="0 0 16 20" fill="none">
-                <path d="M15 10 .5 19V1L15 10Z" stroke="#fff"></path>
-              </svg>
-              <svg class="ico-pause" width="10" height="15" viewBox="0 0 10 15" fill="none">
-                <path d="M1 14.5V0m8 14.5V0" stroke="#fff"></path>
-              </svg>
-            </button>
-            <button class="sound-btn js-sound">
-              <svg class="ico-sound ico-mute" width="23" height="19" viewBox="0 0 23 19" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path class="ico-sound-0" d="M14 18L7.25926 13.2353H1V9V5.23529H7.25926L14 1V9V18Z" stroke="#fff">
-                </path>
-                <path class="ico-sound-50"
-                  d="M17 5C18.203 6.17009 18.9647 7.90305 18.9647 9.83696C18.9647 11.7709 18.203 13.5038 17 14.6739"
-                  stroke="#fff"></path>
-                <path class="ico-sound-100"
-                  d="M18 2C20.406 3.85471 21.9294 6.60162 21.9294 9.66707C21.9294 12.7325 20.406 15.4794 18 17.3341"
-                  stroke="#fff"></path>
-              </svg>
-            </button>
-            <div class="volume-settings js-volume-settings">
-              <input type="range" class="volume-slider js-volume-slider" min="0" max="1" step="0.01" value="0.5">
-            </div>
-            <div class="timeline js-timeline">
-              <div class="timeline-progress js-timeline-prog"></div>
-            </div>
-            <button class="fullscreen-btn js-fullscreen">
-              <svg class="ico-fullscreen" width="20" height="16" viewBox="0 0 20 16" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 10v5.5h6.5M19 10v5.5h-6.5M1 6.5V1h6.5M19 6.5V1h-6.5" stroke="#fff"></path>
-              </svg>
-              <svg class="ico-resize" width="18" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.5 18.5V12H0" stroke="#fff"></path>
-                <path d="M11.5 18.5V12H18" stroke="#fff"></path>
-                <path d="M6.5 0v6.5H0" stroke="#fff"></path>
-                <path d="M11.5 0v6.5H18" stroke="#fff"></path>
-              </svg>
-            </button>
-          </div><iframe src="https://player.vimeo.com/video/1035687384?app_id=122963" width="426" height="240"
-            frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-            title="MODCLOTH - SUMMER SHOWDOWN"></iframe>
-        </div><a href="#" class="modal-close js-modal-close w-inline-block">
-          <div class="modal-close-icon w-embed"><svg class="ico-close" width="16" height="16" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path d="m1 .5 14.5 15M1 15.5 15.5.5" stroke="#fff"></path>
-            </svg></div>
-        </a>
-      </div>
-    </div>
   </div>
   <div class="code-embed w-embed">
     <style>
@@ -1919,6 +605,124 @@
         content: none;
       }
     </style>
+  </div>
+  <div class="modals">
+    <div class="modals-wrapper w-dyn-list">
+      <div role="list" class="modals-list w-dyn-items">
+        <div data-modal-target="finding-dad-trailer-1" role="listitem" class="modal js-modal w-dyn-item">
+          <div data-youtube-id="7rMyHlZbwyw" data-vimeo-id="526003879" class="video-player js-video-player w-embed"
+            data-vimeo-initialized="true">
+            <div class="video-screen js-video">
+              <div class="video-overlay js-overlay"></div>
+            </div>
+            <div class="video-controls js-controls">
+              <button class="play-btn js-play">
+                <svg class="ico-play" width="16" height="20" viewBox="0 0 16 20" fill="none">
+                  <path d="M15 10 .5 19V1L15 10Z" stroke="#fff"></path>
+                </svg>
+                <svg class="ico-pause" width="10" height="15" viewBox="0 0 10 15" fill="none">
+                  <path d="M1 14.5V0m8 14.5V0" stroke="#fff"></path>
+                </svg>
+              </button>
+              <button class="sound-btn js-sound">
+                <svg class="ico-sound ico-mute" width="23" height="19" viewBox="0 0 23 19" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path class="ico-sound-0" d="M14 18L7.25926 13.2353H1V9V5.23529H7.25926L14 1V9V18Z" stroke="#fff">
+                  </path>
+                  <path class="ico-sound-50"
+                    d="M17 5C18.203 6.17009 18.9647 7.90305 18.9647 9.83696C18.9647 11.7709 18.203 13.5038 17 14.6739"
+                    stroke="#fff"></path>
+                  <path class="ico-sound-100"
+                    d="M18 2C20.406 3.85471 21.9294 6.60162 21.9294 9.66707C21.9294 12.7325 20.406 15.4794 18 17.3341"
+                    stroke="#fff"></path>
+                </svg>
+              </button>
+              <div class="volume-settings js-volume-settings">
+                <input type="range" class="volume-slider js-volume-slider" min="0" max="1" step="0.01" value="0.5">
+              </div>
+              <div class="timeline js-timeline">
+                <div class="timeline-progress js-timeline-prog"></div>
+              </div>
+              <button class="fullscreen-btn js-fullscreen">
+                <svg class="ico-fullscreen" width="20" height="16" viewBox="0 0 20 16" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 10v5.5h6.5M19 10v5.5h-6.5M1 6.5V1h6.5M19 6.5V1h-6.5" stroke="#fff"></path>
+                </svg>
+                <svg class="ico-resize" width="18" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.5 18.5V12H0" stroke="#fff"></path>
+                  <path d="M11.5 18.5V12H18" stroke="#fff"></path>
+                  <path d="M6.5 0v6.5H0" stroke="#fff"></path>
+                  <path d="M11.5 0v6.5H18" stroke="#fff"></path>
+                </svg>
+              </button>
+            </div><iframe src="https://player.vimeo.com/video/526003879?app_id=122963" width="426" height="240"
+              frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+              title="White Claw - Camp" data-ready="true"></iframe>
+          </div><a href="#" class="modal-close js-modal-close w-inline-block">
+            <div class="modal-close-icon w-embed"><svg class="ico-close" width="16" height="16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="m1 .5 14.5 15M1 15.5 15.5.5" stroke="#fff"></path>
+              </svg></div>
+          </a>
+        </div>
+        <div data-modal-target="finding-dad-trailer-2" role="listitem" class="modal js-modal w-dyn-item">
+          <div data-youtube-id="" data-vimeo-id="1035687384" class="video-player js-video-player w-embed"
+            data-vimeo-initialized="true">
+            <div class="video-screen js-video">
+              <div class="video-overlay js-overlay"></div>
+            </div>
+            <div class="video-controls js-controls">
+              <button class="play-btn js-play">
+                <svg class="ico-play" width="16" height="20" viewBox="0 0 16 20" fill="none">
+                  <path d="M15 10 .5 19V1L15 10Z" stroke="#fff"></path>
+                </svg>
+                <svg class="ico-pause" width="10" height="15" viewBox="0 0 10 15" fill="none">
+                  <path d="M1 14.5V0m8 14.5V0" stroke="#fff"></path>
+                </svg>
+              </button>
+              <button class="sound-btn js-sound">
+                <svg class="ico-sound ico-mute" width="23" height="19" viewBox="0 0 23 19" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path class="ico-sound-0" d="M14 18L7.25926 13.2353H1V9V5.23529H7.25926L14 1V9V18Z" stroke="#fff">
+                  </path>
+                  <path class="ico-sound-50"
+                    d="M17 5C18.203 6.17009 18.9647 7.90305 18.9647 9.83696C18.9647 11.7709 18.203 13.5038 17 14.6739"
+                    stroke="#fff"></path>
+                  <path class="ico-sound-100"
+                    d="M18 2C20.406 3.85471 21.9294 6.60162 21.9294 9.66707C21.9294 12.7325 20.406 15.4794 18 17.3341"
+                    stroke="#fff"></path>
+                </svg>
+              </button>
+              <div class="volume-settings js-volume-settings">
+                <input type="range" class="volume-slider js-volume-slider" min="0" max="1" step="0.01" value="0.5">
+              </div>
+              <div class="timeline js-timeline">
+                <div class="timeline-progress js-timeline-prog"></div>
+              </div>
+              <button class="fullscreen-btn js-fullscreen">
+                <svg class="ico-fullscreen" width="20" height="16" viewBox="0 0 20 16" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 10v5.5h6.5M19 10v5.5h-6.5M1 6.5V1h6.5M19 6.5V1h-6.5" stroke="#fff"></path>
+                </svg>
+                <svg class="ico-resize" width="18" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.5 18.5V12H0" stroke="#fff"></path>
+                  <path d="M11.5 18.5V12H18" stroke="#fff"></path>
+                  <path d="M6.5 0v6.5H0" stroke="#fff"></path>
+                  <path d="M11.5 0v6.5H18" stroke="#fff"></path>
+                </svg>
+              </button>
+            </div><iframe src="https://player.vimeo.com/video/1035687384?app_id=122963" width="426" height="240"
+              frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+              title="MODCLOTH - SUMMER SHOWDOWN" data-ready="true"></iframe>
+          </div><a href="#" class="modal-close js-modal-close w-inline-block">
+            <div class="modal-close-icon w-embed"><svg class="ico-close" width="16" height="16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="m1 .5 14.5 15M1 15.5 15.5.5" stroke="#fff"></path>
+              </svg></div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6798c785687c3eaa0e8252bb"
     type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
