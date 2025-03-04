@@ -68,6 +68,7 @@ class VideoPlayer {
     iframe.style = "border: none;";
 
     this.video.appendChild(iframe);
+    addClass(this.el, 'video-player-loaded');
 
     this.videoLoaded = true; // Prevent duplicates
   }

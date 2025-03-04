@@ -1,13 +1,17 @@
 .project-thumbs .swiper-slide {
   cursor: pointer;
-  opacity: 0.7;
+}
+.project-thumbs .swiper-slide .overlay {
   transition: opacity 0.2s ease;
 }
-.project-thumbs .swiper-slide-playing {
+.project-thumbs .swiper-slide-active .overlay {
+  opacity: 0;
+}
+.project-thumbs .swiper-slide-loading {
   opacity: 1;
 }
-.project-thumbs .swiper-slide-playing::before, 
-.project-thumbs .swiper-slide-playing::after {
+.project-thumbs .swiper-slide-loading::before, 
+.project-thumbs .swiper-slide-loading::after {
   background: var(--white);
   bottom: 0;
   content: '';
@@ -17,11 +21,11 @@
   transition: opacity 0.2s ease;
   width: 100%;
 }
-.project-thumbs .swiper-slide-playing::before {
+.project-thumbs .swiper-slide-loading::before {
   opacity: 0.3;
   z-index: 1;
 }
-.project-thumbs .swiper-slide-playing::after {
+.project-thumbs .swiper-slide-loading::after {
   animation: progress 11s linear;
   z-index: 2;
 }
@@ -46,8 +50,8 @@
   opacity: 1;
   width: 10px;
 }
-.no-touch .project-thumbs .swiper-slide:hover{
-  opacity: 1;
+.no-touch .project-thumbs .swiper-slide:hover .overlay {
+  opacity: 0;
 }
 @media (min-width: 480px) {
   .project-thumbs-nav {

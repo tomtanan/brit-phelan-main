@@ -12,6 +12,10 @@
 .episodes .episodes-preview {
   transition: opacity 0.2s ease;
 }
+.episodes .swiper-slide .icon-play {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
 .episodes .swiper-slide .overlay {
   transition: opacity 0.2s ease;
 }
@@ -20,15 +24,18 @@
   transform: scale(1.1);
   z-index: 9;
 }
-.episodes .swiper-slide-active .overlay {
-  opacity: 0;
+.episodes .swiper-slide-active .icon-play {
+  opacity: 1;
 }
-.episodes .swiper-slide-active .episodes-preview {
-  pointer-events: none;
+.episodes .swiper-slide-active .overlay {
   opacity: 0;
 }
 .episodes .swiper-slide-active .episodes-video {
   opacity: 1;
+}
+.episodes.swiper-viewed .swiper-slide-active .episodes-preview {
+  opacity: 0;
+  pointer-events: none;
 }
 .episodes-player .video-controls {
   padding: 0;

@@ -35,9 +35,9 @@ class Projects {
 
   // Updates the active thumbnail
   updateActiveThumb() {
-    this.thumbSlides.forEach(slide => removeClass(slide, 'swiper-slide-playing'));
+    this.thumbSlides.forEach(slide => removeClass(slide, 'swiper-slide-loading'));
     if (!this.activeThumbSlide) return;
-    addClass(this.activeThumbSlide, 'swiper-slide-playing');
+    addClass(this.activeThumbSlide, 'swiper-slide-loading');
   }
 
   // Handles video playback for the active slide
@@ -59,7 +59,6 @@ class Projects {
       slidesPerView: 1,
       fadeEffect: { crossFade: true },
       on: {
-        init: () => this.onSlideChange(),
         slideChangeTransitionEnd: () => this.onSlideChange()
       },
     });
@@ -73,6 +72,8 @@ class Projects {
       thumbs: { swiper: this.mainSwiper },
       pagination: { el: `.${refs.thumbsNav}`, clickable: true }
     });
+
+    this.updateActiveThumb();
   }
 
   // Handles actions when the slide changes
@@ -88,7 +89,7 @@ class Projects {
       if (this.thumbsSwiper?.autoplay) {
         this.thumbsSwiper.autoplay.stop();
       }
-      this.thumbSlides.forEach(slide => removeClass(slide, 'swiper-slide-playing'));
+      this.thumbSlides.forEach(slide => removeClass(slide, 'swiper-slide-loading'));
       if (this.activeVideo) this.activeVideo.pause();
     });
 

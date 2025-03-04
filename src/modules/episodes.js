@@ -1,4 +1,5 @@
 import { $, $$ } from 'select-dom';
+import { addClass, off, on } from 'utils/helpers';
 import Swiper from 'swiper/bundle';
 import emitter from 'utils/events';
 import VideoPlayer from './video-player';
@@ -40,7 +41,6 @@ class Episodes {
           prevEl: `.${refs.prevBtn}`,
         },
         on: {
-          init: () => this.initVideoPlayer(),
           slideChangeTransitionStart: () => emitter.emit('resetPlayer'),
           slideChangeTransitionEnd: () => this.initVideoPlayer(),
         },
@@ -54,6 +54,17 @@ class Episodes {
         $('video', preview)?.[paused ? 'pause' : 'play']();
       });
     });
+
+    this.previews.forEach(preview => on(preview, 'click', this.markViewed.bind(this)));
+  }
+
+  markViewed() {
+    const activeSlide = $('.swiper-slide-active', this.el);
+    if (activeSlide && !this.el.classList.contains('swiper-viewed')) {
+        this.initVideoPlayer()
+        addClass(this.el, 'swiper-viewed');
+        this.previews.forEach(preview => off(preview, 'click', this.markViewed.bind(this)));
+    }
   }
 
   initVideoPlayer() {
