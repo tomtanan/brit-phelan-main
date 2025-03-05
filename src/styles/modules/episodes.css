@@ -30,9 +30,6 @@
 .episodes .swiper-slide-active .overlay {
   opacity: 0;
 }
-.episodes .swiper-slide-active .episodes-video {
-  opacity: 1;
-}
 .episodes.swiper-viewed .swiper-slide-active .episodes-preview {
   opacity: 0;
   pointer-events: none;
@@ -46,6 +43,9 @@
 .no-touch .episodes .episodes-video {
   opacity: 0;
   transition: opacity 0.2s ease;
+}
+.no-touch .episodes .swiper-slide-active .episodes-video {
+  opacity: 1;
 }
 .no-touch .episodes-preview {
   display: flex;

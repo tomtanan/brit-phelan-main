@@ -47,7 +47,7 @@ class Episodes {
           slideChangeTransitionEnd: () => {
             if (!isTouchDevice()) this.initVideoPlayer();
           }
-        },
+        }
       });
 
       // Initialize all video players if it's a touch device
