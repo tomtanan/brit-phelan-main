@@ -2,7 +2,6 @@
   opacity: 1;
 }
 .episodes .episodes-preview {
-  display: none;
   transition: opacity 0.2s ease;
 }
 .episodes .swiper-wrapper {
@@ -24,13 +23,19 @@
   transform: scale(1.1);
   z-index: 9;
 }
+.episodes .swiper-slide .episodes-preview {
+  pointer-events: none;
+}
 .episodes .swiper-slide-active .icon-play {
   opacity: 1;
 }
 .episodes .swiper-slide-active .overlay {
   opacity: 0;
 }
-.episodes.swiper-viewed .swiper-slide-active .episodes-preview {
+.episodes .swiper-slide-active .episodes-preview {
+  pointer-events: auto;
+}
+.episodes .swiper-slide-active .episodes-preview.hide {
   opacity: 0;
   pointer-events: none;
 }

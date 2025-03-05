@@ -1,5 +1,5 @@
 import { $, $$ } from 'select-dom';
-import { addClass, off, on, isTouchDevice} from 'utils/helpers';
+import { addClass, removeClass, on, isTouchDevice} from 'utils/helpers';
 import Swiper from 'swiper/bundle';
 import emitter from 'utils/events';
 import VideoPlayer from './video-player';
@@ -35,16 +35,17 @@ class Episodes {
         loop: true,
         spaceBetween: 40,
         keyboard: { enabled: true },
-        allowTouchMove: !isTouchDevice(),
-        slideToClickedSlide: !isTouchDevice(),
-        noSwiping: true,
-        noSwipingClass: 'js-video',
+        slideToClickedSlide: true,
         navigation: {
           nextEl: `.${refs.nextBtn}`,
           prevEl: `.${refs.prevBtn}`,
         },
         on: {
-          slideNextTransitionStart: () => {
+          slideChangeTransitionStart: () => {
+            this.previews.forEach((preview) => {
+              removeClass(preview, 'hide');
+            });
+            this.playPreviews();
             emitter.emit('resetPlayer');
           },
           slideChangeTransitionEnd: () => {
@@ -60,26 +61,25 @@ class Episodes {
   }
 
   bindEvents() {
-    if (!isTouchDevice()) {
-      emitter.on('togglePlay', (paused) => {
-        this.previews.forEach((preview) => {
-          $('video', preview)?.[paused ? 'pause' : 'play']();
-        });
+    this.previews.forEach((preview) => {
+      on(preview, 'click', (e) => {
+        addClass(preview, 'hide');
+        this.pausePreviews();
+        emitter.emit('triggerPlay');
       });
-  
-      this.previews.forEach(preview => on(preview, 'click', this.markViewed.bind(this)));
-    } else {
-
-    }
+    });
   }
 
-  markViewed() {
-    const activeSlide = $('.swiper-slide-active', this.el);
-    if (activeSlide && !this.el.classList.contains('swiper-viewed')) {
-        this.initVideoPlayer()
-        addClass(this.el, 'swiper-viewed');
-        this.previews.forEach(preview => off(preview, 'click', this.markViewed.bind(this)));
-    }
+  pausePreviews () {
+    this.previews.forEach((preview) => {
+      $('video', preview).pause();
+    });
+  }
+
+  playPreviews () {
+    this.previews.forEach((preview) => {
+      $('video', preview).play();
+    });
   }
 
   initVideoPlayer() {

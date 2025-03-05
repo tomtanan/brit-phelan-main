@@ -99,6 +99,7 @@ class VideoPlayer {
       emitter.on('openModal', () => this.togglePlay());
     }
     emitter.on('resetPlayer', () => this.reset());
+    emitter.on('triggerPlay', () => this.togglePlay());
   }
 
 
@@ -129,12 +130,21 @@ class VideoPlayer {
   }
 
   togglePlay() {
-    if (getActivePlayer() === this.el) {
-      this.player.getPaused().then((paused) => {
-        paused ? this.player.play() : this.player.pause();
-        toggleClass(this.playBtn, 'active', !paused);
-        emitter.emit('togglePlay', paused);
-      });
+    if (this.isYouTube) {
+      if (getActivePlayer() === this.el) {
+        const iframe = $(`iframe`, this.video);
+        if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: '' }), '*');
+        }
+      }
+    } else {
+      if (getActivePlayer() === this.el) {
+        this.player.getPaused().then((paused) => {
+          paused ? this.player.play() : this.player.pause();
+          toggleClass(this.playBtn, 'active', !paused);
+          emitter.emit('togglePlay', paused);
+        });
+      }
     }
   }
 
