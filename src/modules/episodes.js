@@ -44,6 +44,9 @@ class Episodes {
           prevEl: `.${refs.prevBtn}`,
         },
         on: {
+          slideNextTransitionStart: () => {
+            emitter.emit('resetPlayer');
+          },
           slideChangeTransitionEnd: () => {
             if (!isTouchDevice()) this.initVideoPlayer();
           }

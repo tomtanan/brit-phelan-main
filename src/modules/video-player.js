@@ -8,7 +8,7 @@ class VideoPlayer {
 
   constructor(el) {
     this.el = el;
-    this.vimeoId = el.getAttribute('data-vimeo-id');
+    this.vimeoId = el.getAttribute('data-video-id');
     this.youtubeId = el.getAttribute('data-youtube-id');
     this.isYouTube = this.youtubeId && this.youtubeId.trim() !== '';
     this.player = null;
@@ -58,7 +58,7 @@ class VideoPlayer {
 
     const iframe = document.createElement('iframe');
     if (this.isYouTube) {
-      iframe.src = `https://www.youtube.com/embed/${this.youtubeId}?modestbranding=1&rel=0&playsinline=1`;
+      iframe.src = `https://www.youtube.com/embed/${this.youtubeId}?modestbranding=1&rel=0&playsinline=1&enablejsapi=1`;
     } else {
       iframe.src = `https://player.vimeo.com/video/${this.vimeoId}?controls=0&dnt=1`;
     }
@@ -139,11 +139,11 @@ class VideoPlayer {
   }
 
   reset() {
-    console.log(getActivePlayer());
     if (this.isYouTube) {
       const iframe = $('iframe', this.video);
       if (iframe) {
-        iframe.src = iframe.src;
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: '' }), '*');
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'seekTo', args: [0, true] }), '*');
       }
     } else {
       this.player.pause();
