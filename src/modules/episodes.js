@@ -50,7 +50,6 @@ class Episodes {
         }
       });
 
-      // Initialize all video players if it's a touch device
       if (isTouchDevice()) {
         this.initAllVideoPlayers();
       }
