@@ -49,15 +49,13 @@ class Episodes {
             emitter.emit('resetPlayer');
           },
           slideChangeTransitionEnd: () => {
-            if (!isTouchDevice()) this.initVideoPlayer();
+            this.initVideoPlayer();
           }
         }
       });
-
-      if (isTouchDevice()) {
-        this.initAllVideoPlayers();
-      }
     }
+
+    this.initVideoPlayer();
   }
 
   bindEvents() {
@@ -90,16 +88,6 @@ class Episodes {
         VideoPlayer.init(videoContainer);
       }
     }
-  }
-
-  initAllVideoPlayers() {
-    const slides = $$('.swiper-slide', this.el);
-    slides.forEach(slide => {
-      const videoContainer = $(`.${refs.video}`, slide);
-      if (videoContainer && !VideoPlayer.instances.has(videoContainer)) {
-          VideoPlayer.init(videoContainer);
-      }
-    });
   }
 
   destroy() {
