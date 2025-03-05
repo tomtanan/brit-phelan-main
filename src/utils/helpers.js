@@ -1,3 +1,72 @@
+export const splitIntoWords = (elements) => {
+  // If 'elements' is a NodeList or an array, iterate through them
+  if (NodeList.prototype.isPrototypeOf(elements) || Array.isArray(elements)) {
+    elements.forEach((element) => splitIntoWords(element));
+    return;
+  }
+
+  // Ensure node is valid and not already processed
+  const node = elements;
+  if (!node || !(node instanceof Node)) throw new Error('Expected a DOM Node.');
+
+  // If it's a text node, split the words and wrap them in spans
+  if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+    const fragment = document.createDocumentFragment();
+    const words = node.textContent.trim().split(/\s+/);
+    words.forEach((word) => {
+      const span = document.createElement('span');
+      span.className = 'word';
+      span.textContent = word;
+      if (word !== '.' && word !== '!') {
+        fragment.appendChild(document.createTextNode(' ')); // Add space before each word
+      }
+      fragment.appendChild(span);
+    });
+    node.replaceWith(fragment); // Replace the entire text node at once
+    return; // Early return as we don't need to process further
+  }
+
+  // If it's an element node, process its children
+  if (node.nodeType === Node.ELEMENT_NODE) {
+    // If the node is an inline span but not already a 'word', apply the class and skip re-wrapping
+    if (node.tagName.toLowerCase() === 'span' && !node.classList.contains('word')) {
+      node.classList.add('word');
+      return; // Don't process its children further
+    }
+
+    // Process only the text node children, leave already wrapped spans untouched
+    Array.from(node.childNodes).forEach((childNode) => {
+      if (childNode.nodeType === Node.TEXT_NODE || childNode.nodeType === Node.ELEMENT_NODE) {
+        splitIntoWords(childNode);
+      }
+    });
+  }
+};
+
+export const splitIntoLetters = (elements) => {
+  elements.forEach((element) => {
+    // Recursive function to handle nested elements
+    const processNode = (node) => {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+        const fragment = document.createDocumentFragment();
+        const letters = Array.from(node.textContent); // Split text into individual letters
+        letters.forEach((letter) => {
+          const i = document.createElement('i');
+          i.className = 'letter';
+          i.textContent = letter;
+          fragment.appendChild(i);
+        });
+        node.replaceWith(fragment); // Replace the original text node with the fragment
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        Array.from(node.childNodes).forEach(processNode); // Recurse through child nodes
+      }
+    };
+
+    // Start processing each top-level node
+    Array.from(element.childNodes).forEach(processNode);
+  });
+};
+
 export const isTouchDevice = () => {
   return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 }

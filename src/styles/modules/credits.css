@@ -1,0 +1,36 @@
+.credits ul {
+  margin-bottom: 0;
+}
+.credits-hidden-list {
+  opacity: 0;
+  transform: translateY(10px);
+  height: 0;
+  overflow: hidden;
+  transition: height 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+.credits-hidden-list.visible {
+  height: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.credits-more-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin-top: 10px;
+  opacity: 0.5;
+  padding: 0;
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+.no-touch .credits-more-btn:hover {
+  opacity: 1;
+}
+
+.credits-more-btn.fade-out {
+  opacity: 0;
+}

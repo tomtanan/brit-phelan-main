@@ -6,13 +6,17 @@ import projects from '../modules/projects.js';
 import videoPlayer from '../modules/video-player.js';
 import episodes from '../modules/episodes.js';
 import discover from '../modules/discover.js';
+import contact from '../modules/contact.js';
+import credits from '../modules/credits.js';
 
 export const modulesMap = {
   'modal': modal,
   'projects': projects,
   'episodes': episodes,
   'discover': discover,
-  'video-player': videoPlayer
+  'video-player': videoPlayer,
+  'contact': contact,
+  'credits': credits,
 };
 
 // Automatically initialize sections based on the data-module attribute
@@ -28,6 +32,7 @@ on(document, 'DOMContentLoaded', () => {
     } else {
       console.error(`Invalid module structure for: ${moduleName}`);
     }
+    element.removeAttribute('data-module');
   });
 
   watchVideos('video');
