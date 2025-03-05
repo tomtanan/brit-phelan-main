@@ -1,5 +1,5 @@
 import { $, $$ } from 'select-dom';
-import { addClass, off, on } from 'utils/helpers';
+import { addClass, off, on, isTouchDevice} from 'utils/helpers';
 import Swiper from 'swiper/bundle';
 import emitter from 'utils/events';
 import VideoPlayer from './video-player';
@@ -35,27 +35,33 @@ class Episodes {
         loop: true,
         spaceBetween: 40,
         keyboard: { enabled: true },
-        slideToClickedSlide: true,
+        allowTouchMove: !isTouchDevice(),
+        slideToClickedSlide: !isTouchDevice(),
         navigation: {
           nextEl: `.${refs.nextBtn}`,
           prevEl: `.${refs.prevBtn}`,
         },
         on: {
-          slideChangeTransitionStart: () => emitter.emit('resetPlayer'),
-          slideChangeTransitionEnd: () => this.initVideoPlayer(),
+          slideChangeTransitionEnd: () => {
+            if (!isTouchDevice()) this.initVideoPlayer();
+          }
         },
       });
     }
   }
 
   bindEvents() {
-    emitter.on('togglePlay', (paused) => {
-      this.previews.forEach((preview) => {
-        $('video', preview)?.[paused ? 'pause' : 'play']();
+    if (!isTouchDevice()) {
+      emitter.on('togglePlay', (paused) => {
+        this.previews.forEach((preview) => {
+          $('video', preview)?.[paused ? 'pause' : 'play']();
+        });
       });
-    });
+  
+      this.previews.forEach(preview => on(preview, 'click', this.markViewed.bind(this)));
+    } else {
 
-    this.previews.forEach(preview => on(preview, 'click', this.markViewed.bind(this)));
+    }
   }
 
   markViewed() {

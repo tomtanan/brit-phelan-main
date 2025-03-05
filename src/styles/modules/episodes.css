@@ -10,6 +10,7 @@
   transition: opacity 0.2s ease;
 }
 .episodes .episodes-preview {
+  display: none;
   transition: opacity 0.2s ease;
 }
 .episodes .swiper-slide .icon-play {
@@ -42,6 +43,9 @@
 }
 .episodes-player .video-controls .fullscreen-btn {
   display: none;
+}
+.no-touch .episodes-preview {
+  display: flex;
 }
 .no-touch .episodes-nav-btn {
   transition: opacity 0.2s ease;

@@ -10,16 +10,20 @@
 .project-thumbs .swiper-slide-loading {
   opacity: 1;
 }
-.project-thumbs .swiper-slide-loading::before, 
-.project-thumbs .swiper-slide-loading::after {
+.project-thumbs .swiper-slide::before, 
+.project-thumbs .swiper-slide::after {
   background: var(--white);
-  bottom: 0;
+  bottom: -2px;
   content: '';
   height: 2px;
   left: 0;
   position: absolute;
-  transition: opacity 0.2s ease;
+  transition: bottom 0.2s ease, opacity 0.2s ease;
   width: 100%;
+}
+.project-thumbs .swiper-slide-loading::before,
+.project-thumbs .swiper-slide-loading::after {
+  bottom: 0;
 }
 .project-thumbs .swiper-slide-loading::before {
   opacity: 0.3;
@@ -71,5 +75,10 @@
 @media (min-width: 1920px) {
   .project-thumbs-nav {
     width: 330px !important;
+  }
+}
+@supports (-webkit-touch-callout: none) {
+  .projects {
+    height: 100dvh;
   }
 }

@@ -124,9 +124,19 @@ export const watchVideos = (sel = 'video', t = 0.5) => {
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
-      e.isIntersecting ? e.target.play().catch(() => {}) : e.target.pause();
+      if (e.isIntersecting) {
+        e.target.play().catch(() => {});
+      } else {
+        e.target.pause();
+      }
     });
   }, { threshold: t });
 
-  videos.forEach(video => observer.observe(video));
+  videos.forEach(video => {
+    observer.observe(video);
+    // Pause all videos initially if not in viewport
+    if (!video.getBoundingClientRect().top < window.innerHeight && video.getBoundingClientRect().bottom > 0) {
+      video.pause();
+    }
+  });
 };

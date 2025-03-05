@@ -60,6 +60,8 @@ class VideoPlayer {
     if (this.isYouTube) {
       iframe.src = `https://www.youtube.com/embed/${this.youtubeId}?modestbranding=1&rel=0&playsinline=1`;
     } else {
+      console.log('test')
+      console.log(this.vimeoId);
       iframe.src = `https://player.vimeo.com/video/${this.vimeoId}?controls=0&dnt=1`;
     }
     iframe.width = '100%';
@@ -139,6 +141,7 @@ class VideoPlayer {
   }
 
   reset() {
+    console.log(getActivePlayer());
     if (this.isYouTube) {
       const iframe = $('iframe', this.video);
       if (iframe) {
