@@ -37,6 +37,8 @@ class Episodes {
         keyboard: { enabled: true },
         allowTouchMove: !isTouchDevice(),
         slideToClickedSlide: !isTouchDevice(),
+        noSwiping: true,
+        noSwipingClass: 'js-video',
         navigation: {
           nextEl: `.${refs.nextBtn}`,
           prevEl: `.${refs.prevBtn}`,
@@ -47,6 +49,11 @@ class Episodes {
           }
         },
       });
+
+      // Initialize all video players if it's a touch device
+      if (isTouchDevice()) {
+        this.initAllVideoPlayers();
+      }
     }
   }
 
@@ -81,7 +88,17 @@ class Episodes {
         VideoPlayer.init(videoContainer);
       }
     }
-  }  
+  }
+
+  initAllVideoPlayers() {
+    const slides = $$('.swiper-slide', this.el);
+    slides.forEach(slide => {
+      const videoContainer = $(`.${refs.video}`, slide);
+      if (videoContainer && !VideoPlayer.instances.has(videoContainer)) {
+          VideoPlayer.init(videoContainer);
+      }
+    });
+  }
 
   destroy() {
     if (this.swiper) {

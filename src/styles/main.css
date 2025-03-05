@@ -2,6 +2,7 @@
 @import 'libs/animations';
 @import 'libs/global';
 @import 'libs/buttons';
+@import 'libs/icons';
 @import 'styles/modules/nav';
 @import 'styles/modules/projects';
 @import 'styles/modules/hero';

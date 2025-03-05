@@ -1,17 +1,16 @@
+.episodes .episodes-video {
+  opacity: 1;
+}
+.episodes .episodes-preview {
+  display: none;
+  transition: opacity 0.2s ease;
+}
 .episodes .swiper-wrapper {
   gap: 0;
 }
 .episodes .swiper-slide {
   cursor: pointer;
   transition: transform 0.2s ease;
-}
-.episodes .episodes-video {
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-.episodes .episodes-preview {
-  display: none;
-  transition: opacity 0.2s ease;
 }
 .episodes .swiper-slide .icon-play {
   opacity: 0;
@@ -43,6 +42,10 @@
 }
 .episodes-player .video-controls .fullscreen-btn {
   display: none;
+}
+.no-touch .episodes .episodes-video {
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 .no-touch .episodes-preview {
   display: flex;
