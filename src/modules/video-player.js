@@ -131,11 +131,13 @@ class VideoPlayer {
 
   togglePlay() {
     if (this.isYouTube) {
-      const iframe = $(`iframe`, this.video);
-      if (iframe && iframe.contentWindow) {
-        setTimeout(() => {
-          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: '' }), '*');
-        }, 200);
+      if (getActivePlayer() === this.el) {
+        const iframe = $(`iframe`, this.video);
+        if (iframe && iframe.contentWindow) {
+          setTimeout(() => {
+            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: '' }), '*');
+          }, 200);
+        }
       }
     } else {
       if (getActivePlayer() === this.el) {
