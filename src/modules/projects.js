@@ -68,7 +68,7 @@ class Projects {
       autoplay: { delay: 10000, disableOnInteraction: false },
       keyboard: { enabled: true },
       loop: true,
-      spaceBetween: 20,
+      spaceBetween: 10,
       loopedSlides: 5,
       loopAdditionalSlides: 2,
       centeredSlides: false,
