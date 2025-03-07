@@ -1,5 +1,5 @@
 import { $, $$ } from 'select-dom';
-import { addClass, removeClass } from 'utils/helpers';
+import { addClass, removeClass, isTouchDevice } from 'utils/helpers';
 import Swiper from 'swiper/bundle';
 import emitter from 'utils/events';
 
@@ -68,10 +68,9 @@ class Projects {
       autoplay: { delay: 10000, disableOnInteraction: false },
       keyboard: { enabled: true },
       loop: true,
-      spaceBetween: 10,
-      loopedSlides: true,
-      loopedSlidesLimit: 10,
-      loopAdditionalSlides: 1,
+      spaceBetween: 20,
+      loopedSlides: 5,
+      loopAdditionalSlides: 2,
       centeredSlides: false,
       slideToClickedSlide: true,
       thumbs: { swiper: this.mainSwiper },
