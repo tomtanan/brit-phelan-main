@@ -81,10 +81,11 @@
   }
 }
 .project-thumbs .swiper-slide {
-  margin-right: 0;
   opacity: 0;
 }
 .project-thumbs .swiper-slide-active,
+.project-thumbs .swiper-slide-prev,
+.project-thumbs .swiper-slide-prev ~ .swiper-slide,
 .project-thumbs .swiper-slide-active ~ .swiper-slide {
   opacity: 1;
 }

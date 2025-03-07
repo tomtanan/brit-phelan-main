@@ -68,7 +68,7 @@ class Projects {
       autoplay: { delay: 10000, disableOnInteraction: false },
       keyboard: { enabled: true },
       loop: true,
-      spaceBetween: 20,
+      spaceBetween: 10,
       loopedSlides: true,
       loopedSlidesLimit: 10,
       loopAdditionalSlides: 1,
@@ -76,12 +76,6 @@ class Projects {
       slideToClickedSlide: true,
       thumbs: { swiper: this.mainSwiper },
       pagination: { el: `.${refs.thumbsNav}`, clickable: true },
-      on: {
-        slideChangeTransitionEnd: () => {
-          this.thumbsSwiper.loopCreate();
-          this.thumbsSwiper.update();
-        }
-      }
     });
 
     this.updateActiveThumb();
