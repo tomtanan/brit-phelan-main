@@ -44,7 +44,7 @@
 #mc_embed_shell {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 30px;
   width: 100%;
 }
 #mc_embed_signup {
@@ -81,8 +81,11 @@
   position: relative;
 }
 .mc-text-field {
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   background: transparent;
+  font-size: 14px;
+  font-weight: 300;
   flex: 1 1 auto;
   height: 38px;
   outline: none;

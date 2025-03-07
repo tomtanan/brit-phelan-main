@@ -1,5 +1,6 @@
 .project-thumbs .swiper-slide {
   cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 .project-thumbs .swiper-slide .overlay {
   transition: opacity 0.2s ease;
@@ -32,9 +33,6 @@
 .project-thumbs .swiper-slide-loading::after {
   animation: progress 11s linear;
   z-index: 2;
-}
-.project-thumbs .swiper-slide-prev {
-  opacity: 0;
 }
 .project-thumbs-nav {
   align-items: center;
@@ -81,4 +79,12 @@
   .projects {
     height: 100dvh;
   }
+}
+.project-thumbs .swiper-slide {
+  margin-right: 0;
+  opacity: 0;
+}
+.project-thumbs .swiper-slide-active,
+.project-thumbs .swiper-slide-active ~ .swiper-slide {
+  opacity: 1;
 }

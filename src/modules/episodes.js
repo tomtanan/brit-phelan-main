@@ -30,8 +30,8 @@ class Episodes {
 
     if (!this.swiper) {
       this.swiper = new Swiper($(`.${refs.swiper}`, this.el), {
-        slidesPerView: 'auto',
-        centeredSlides: true,
+        slidesPerView: 1,
+        centeredSlides: false,
         loop: true,
         spaceBetween: 40,
         keyboard: { enabled: true },
