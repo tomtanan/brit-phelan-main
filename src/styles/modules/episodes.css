@@ -67,9 +67,9 @@
 .no-touch .episodes-nav-btn:hover {
   opacity: 0.5;
 }
-.no-touch .swiper-slide .icon-background {
+.no-touch .episodes .swiper-slide .icon-background {
   transition: transform 0.2s ease;
 }
-.no-touch .swiper-slide:hover .icon-background {
+.no-touch .episodes .swiper-slide:hover .icon-background {
   transform: scale(1.2);
 }

@@ -4,3 +4,11 @@
 .no-touch .button:hover {
   opacity: 0.5;
 }
+.music-button .ico-sound-50,
+.music-button .ico-sound-100 {
+  display: none;
+}
+.music-button.active .ico-sound-50,
+.music-button.active .ico-sound-100 {
+  display: block;
+}

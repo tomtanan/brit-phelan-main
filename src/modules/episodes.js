@@ -36,6 +36,7 @@ class Episodes {
         spaceBetween: 40,
         keyboard: { enabled: true },
         slideToClickedSlide: true,
+        loopAdditionalSlides: 5,
         navigation: {
           nextEl: `.${refs.nextBtn}`,
           prevEl: `.${refs.prevBtn}`,

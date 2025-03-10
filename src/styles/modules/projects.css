@@ -34,6 +34,9 @@
   animation: progress 11s linear;
   z-index: 2;
 }
+.project-thumbs .swiper-slide-loading.progress-pause::after {
+  animation-play-state: paused !important;
+}
 .project-thumbs-nav {
   align-items: center;
   display: flex;

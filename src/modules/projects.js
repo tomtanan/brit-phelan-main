@@ -1,13 +1,15 @@
 import { $, $$ } from 'select-dom';
-import { addClass, removeClass, isTouchDevice } from 'utils/helpers';
+import { addClass, removeClass, isTouchDevice, on, off } from 'utils/helpers';
 import Swiper from 'swiper/bundle';
 import emitter from 'utils/events';
+import { Howl, Howler } from 'howler'; // 🚀 Import Howler.js
 
 const refs = {
   main: 'js-projects-swiper',
   thumbs: 'js-thumbs-swiper',
   thumbsNav: 'js-thumbs-nav',
-  video: 'js-background-video'
+  video: 'js-background-video',
+  musicBtn: 'js-music', // 🚀 Added music button reference
 };
 
 class Projects {
@@ -17,6 +19,8 @@ class Projects {
     this.videos = $$(`.${refs.video}`, el);
     this.thumbs = $(`.${refs.thumbs}`, el);
     this.thumbSlides = $$(`.${refs.thumbs} .swiper-slide`, el);
+    this.currentSound = null; // 🚀 Store the current Howl instance
+    this.isMuted = false; // 🚀 Mute state tracking
     this.initSwipers();
     this.bindEvents();
   }
@@ -31,6 +35,15 @@ class Projects {
 
   get activeVideo() {
     return this.activeSlide ? $(`.${refs.video}`, this.activeSlide) : null;
+  }
+
+  get activeMusicBtn() { // 🚀 Get active slide's music button
+    return this.activeSlide ? $(`.${refs.musicBtn}`, this.activeSlide) : null;
+  }
+  
+  get activeAudioSrc() { // 🚀 Get music URL for active slide
+    const btn = this.activeMusicBtn;
+    return btn ? btn.dataset.musicMp3 || btn.dataset.musicM4a || btn.dataset.musicOgg : null;
   }
 
   // Updates the active thumbnail
@@ -51,6 +64,43 @@ class Projects {
     }
   }
 
+  // Handle background music per slide using Howler
+  handleMusicPlayback() { 
+    if (this.currentSound) {
+      this.currentSound.stop();
+    }
+    if (!this.activeAudioSrc) return;
+
+    this.currentSound = new Howl({
+      src: [this.activeAudioSrc],
+      loop: true,
+      volume: this.isMuted ? 0 : 0.3, 
+      autoplay: true
+    });
+    this.updateMusicBtnState();
+  }
+
+  // Toggle mute / unmute
+  toggleMusic() { 
+    this.isMuted = !this.isMuted;
+    if (this.currentSound) {
+      this.currentSound.volume(this.isMuted ? 0 : 0.3);
+    }
+    this.updateMusicBtnState();
+  }
+
+  // 🚀 Add/remove class on all music buttons
+  updateMusicBtnState() { 
+    $$(`.${refs.musicBtn}`).forEach(btn => {
+      if (this.isMuted) {
+        removeClass(btn, 'active');
+      } else {
+        addClass(btn, 'active');
+      }
+    });
+  }
+
+
   // Initializes the main and thumbnail Swipers
   initSwipers() {
     this.mainSwiper = new Swiper(this.main, {
@@ -69,8 +119,6 @@ class Projects {
       keyboard: { enabled: true },
       loop: true,
       spaceBetween: 20,
-      loopedSlides: 5,
-      loopAdditionalSlides: 2,
       centeredSlides: false,
       slideToClickedSlide: true,
       thumbs: { swiper: this.mainSwiper },
@@ -78,6 +126,7 @@ class Projects {
     });
 
     this.updateActiveThumb();
+    this.handleMusicPlayback(); 
   }
 
   // Handles actions when the slide changes
@@ -85,11 +134,15 @@ class Projects {
     const activeSlide = this.activeSlide;
     this.handleVideoPlayback(activeSlide);
     this.updateActiveThumb();
+    this.handleMusicPlayback(); 
   }
 
   // Binds custom events for pausing and resuming swipers
   bindEvents() {
     emitter.on('openModal', () => {
+      if (this.currentSound) {
+        this.currentSound.pause();
+      }
       if (this.thumbsSwiper?.autoplay) {
         this.thumbsSwiper.autoplay.stop();
       }
@@ -98,6 +151,10 @@ class Projects {
     });
 
     emitter.on('closeModal', () => {
+      if (this.currentSound) {
+        this.currentSound.stop();
+        this.handleMusicPlayback();
+      }
       if (this.thumbsSwiper?.autoplay) {
         this.thumbsSwiper.autoplay.start();
       }
@@ -105,6 +162,13 @@ class Projects {
       if (this.activeVideo) {
         this.activeVideo.currentTime = 0;
         this.activeVideo.play();
+      }
+    });
+
+    // Toggle music on button click
+    on(this.el, 'click', (e) => {
+      if (e.target.closest(`.${refs.musicBtn}`)) {
+        this.toggleMusic();
       }
     });
   }
