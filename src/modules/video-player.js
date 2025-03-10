@@ -154,8 +154,7 @@ class VideoPlayer {
     if (this.isYouTube) {
       const iframe = $('iframe', this.video);
       if (iframe) {
-        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: '' }), '*');
-        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'seekTo', args: [0, true] }), '*');
+        iframe.src = iframe.src;
       }
     } else {
       this.player.pause();

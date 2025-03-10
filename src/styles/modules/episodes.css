@@ -29,9 +29,6 @@
   transform: translate3d(0, 0, 0);
   will-change: transform;
 }
-.episodes .swiper-slide .episodes-preview {
-  pointer-events: none;
-}
 .episodes .swiper-slide-active .icon-play {
   opacity: 1;
 }
@@ -39,11 +36,11 @@
   opacity: 0;
 }
 .episodes .swiper-slide-active .episodes-preview {
-  pointer-events: auto;
+  pointer-events: auto !important;
 }
 .episodes .swiper-slide-active .episodes-preview.hide {
   opacity: 0;
-  pointer-events: none;
+  pointer-events: none !important;
 }
 .episodes-player .video-controls {
   padding: 0;

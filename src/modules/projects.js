@@ -19,8 +19,8 @@ class Projects {
     this.videos = $$(`.${refs.video}`, el);
     this.thumbs = $(`.${refs.thumbs}`, el);
     this.thumbSlides = $$(`.${refs.thumbs} .swiper-slide`, el);
-    this.currentSound = null; // 🚀 Store the current Howl instance
-    this.isMuted = false; // 🚀 Mute state tracking
+    this.currentSound = null;
+    this.isMuted = true; 
     this.initSwipers();
     this.bindEvents();
   }
@@ -89,7 +89,7 @@ class Projects {
     this.updateMusicBtnState();
   }
 
-  // 🚀 Add/remove class on all music buttons
+  // Add/remove class on all music buttons
   updateMusicBtnState() { 
     $$(`.${refs.musicBtn}`).forEach(btn => {
       if (this.isMuted) {

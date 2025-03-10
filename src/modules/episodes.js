@@ -62,9 +62,12 @@ class Episodes {
   bindEvents() {
     this.previews.forEach((preview) => {
       on(preview, 'click', (e) => {
-        addClass(preview, 'hide');
-        this.pausePreviews();
-        emitter.emit('triggerPlay');
+        const activeSlide = $('.swiper-slide-active', this.el);
+        if (preview.closest('.swiper-slide') === activeSlide) {
+          addClass(preview, 'hide');
+          this.pausePreviews();
+          emitter.emit('triggerPlay');
+        }
       });
     });
   }
