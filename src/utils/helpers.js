@@ -106,9 +106,6 @@ export const off = (element, event, handler) => {
 // Return active modal
 export const getActiveModal = () => document.querySelector('.js-modal.active');
 
-// Return active slide
-export const getActiveEpisode = () => document.querySelector('.episodes-slide.swiper-slide-active');
-
 // Return active video player
 export const getActivePlayer = () => {
   const modal = getActiveModal();

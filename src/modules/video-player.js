@@ -152,9 +152,11 @@ class VideoPlayer {
 
   reset() {
     if (this.isYouTube) {
-      const iframe = $('iframe', this.video);
-      if (iframe) {
-        iframe.src = iframe.src;
+      if (getActivePlayer() !== this.el) {
+        const iframe = $('iframe', this.video);
+        if (iframe) {
+          iframe.src = iframe.src;
+        }
       }
     } else {
       this.player.pause();

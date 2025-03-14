@@ -21,6 +21,7 @@ class Episodes {
     this.previews = $$(`.${refs.preview}`, this.el);
     this.init();
     this.bindEvents();
+    this.observeVisibleSlides();
   }
 
   init() {
@@ -50,13 +51,34 @@ class Episodes {
             emitter.emit('resetPlayer');
           },
           slideChangeTransitionEnd: () => {
-            this.initVideoPlayer();
+            this.observeVisibleSlides();
           }
         }
       });
     }
 
-    this.initVideoPlayer();
+    this.observeVisibleSlides();
+  }
+
+  observeVisibleSlides() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.initVideoPlayer(entry.target);
+        }
+      });
+    }, { root: this.el, threshold: 0.5 }); // Adjust threshold as needed
+
+    $$('.swiper-slide', this.el).forEach((slide) => {
+      observer.observe(slide);
+    });
+  }
+
+  initVideoPlayer(slide) {
+    const videoContainer = $(`.${refs.video}`, slide);
+    if (videoContainer && !VideoPlayer.instances.has(videoContainer)) {
+      VideoPlayer.init(videoContainer);
+    }
   }
 
   bindEvents() {
@@ -72,26 +94,16 @@ class Episodes {
     });
   }
 
-  pausePreviews () {
+  pausePreviews() {
     this.previews.forEach((preview) => {
       $('video', preview).pause();
     });
   }
 
-  playPreviews () {
+  playPreviews() {
     this.previews.forEach((preview) => {
       $('video', preview).play();
     });
-  }
-
-  initVideoPlayer() {
-    const activeSlide = $('.swiper-slide-active', this.el);
-    if (activeSlide) {
-      const videoContainer = $(`.${refs.video}`, activeSlide);
-      if (videoContainer && !VideoPlayer.instances.has(videoContainer)) {
-        VideoPlayer.init(videoContainer);
-      }
-    }
   }
 
   destroy() {
