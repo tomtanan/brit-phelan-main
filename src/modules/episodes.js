@@ -48,7 +48,7 @@ class Episodes {
               removeClass(preview, 'hide');
             });
             this.playPreviews();
-            emitter.emit('resetPlayer');
+            this.resetIframes();
           },
           slideChangeTransitionEnd: () => {
             this.observeVisibleSlides();
@@ -103,6 +103,17 @@ class Episodes {
   playPreviews() {
     this.previews.forEach((preview) => {
       $('video', preview).play();
+    });
+  }
+
+  resetIframes() {
+    const activeSlide = $('.swiper-slide-active', this.el);
+    const iframes = $$('iframe', this.el);
+
+    iframes.forEach((iframe) => {
+      if (!activeSlide.contains(iframe)) {
+        iframe.src = iframe.src;
+      }
     });
   }
 
